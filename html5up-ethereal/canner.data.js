@@ -15,12 +15,12 @@ module.exports = {
     title: '多功能後台',
     description: '為客戶設計一個好用的後台要花非常多的時間，我們讓您可以專注在您最擅長的事情。把後台全部輕易的在 Canner 上解決。',
     icons: [
-      // {'icon': 'image'},
-      // {'icon': 'server'},
-      // {'icon': 'code'},
-      // {'icon': 'cloud'},
-      // {'icon': 'users'},
-      // {'icon': 'cogs'}
+      {'icon': 'image'},
+      {'icon': 'server'},
+      {'icon': 'code'},
+      {'icon': 'cloud'},
+      {'icon': 'users'},
+      {'icon': 'cogs'}
     ]
   },
   third: {
