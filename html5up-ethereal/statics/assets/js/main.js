@@ -133,6 +133,7 @@
 				// contact
 				$('#contact h2').html(data.title);
 				$('#contact p').html(data.description);
+				$('#contact #copy').html(data.copy);
 				
 				// social
 				if (data.facebook && data.facebook.link) {
