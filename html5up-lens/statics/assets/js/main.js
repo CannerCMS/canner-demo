@@ -186,16 +186,20 @@ var main = (function($) { var _ = {
 	 */
 	initEvents: function() {
 
+			// Window. initial load body
 			// Remove is-loading-* classes on load.
-				_.$body.removeClass('is-loading-0');
+				// _.$window.on('load', function() {
+					
+					_.$body.removeClass('is-loading-0');
 
-				window.setTimeout(function() {
-					_.$body.removeClass('is-loading-1');
-				}, 100);
+					window.setTimeout(function() {
+						_.$body.removeClass('is-loading-1');
+					}, 100);
 
-				window.setTimeout(function() {
-					_.$body.removeClass('is-loading-2');
-				}, 100 + Math.max(_.settings.layoutDuration - 150, 0));
+					window.setTimeout(function() {
+						_.$body.removeClass('is-loading-2');
+					}, 100 + Math.max(_.settings.layoutDuration - 150, 0));
+				// })
 
 			// Disable animations/transitions on resize.
 				var resizeTimeout;
