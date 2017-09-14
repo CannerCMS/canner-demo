@@ -76,6 +76,17 @@
 			xshort: '(min-aspect-ratio: 16/6)'
 		});
 
+		// Vars.
+			var	$window = $(window),
+			$document = $(document),
+			$body = $('body'),
+			$html = $('html'),
+			$bodyHtml = $('body,html'),
+			$wrapper = $('#wrapper');
+
+		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
+
 		/**
 		 * connect to Canner database
 		 */
@@ -103,27 +114,49 @@
 				// second
 				$('#second h2').html(data.title);
 				$('#second p').html(data.description);
-				data.icons.forEach((icon) => {
+				data.icons.forEach((item) => {
 					$('#second ul')
-						.append('<li><span class="icon fa-' + icon + '"><span class="label">' + icon + '</span></span></li>');
+						.append('<li><span class="icon fa-' + item.icon + '"><span class="label">' + item.icon + '</span></span></li>');
 				})
 
-				return db.object('second').get().exec();
+				return db.object('third').get().exec();
+			})
+			.then((data) => {
+				// third
+				$('#third h2').html(data.title);
+				$('#third p').html(data.description);
+				$('#third img').attr('src', data.image);
+
+				return db.object('contact').get().exec();
+			})
+			.then((data) => {
+				// contact
+				$('#contact h2').html(data.title);
+				$('#contact p').html(data.description);
+				
+				// social
+				if (data.facebook && data.facebook.link) {
+					$('#social').append('<li class="icon fa-facebook"><a href="' + data.facebook.link + '">facebook.com/' + data.facebook.id + '</a></li>')
+				}
+
+				if (data.medium && data.medium.link) {
+					$('#social').append('<li class="icon fa-medium"><a href="' + data.medium.link + '">medium.com/' + data.medium.id + '</a></li>')
+				}
+
+				if (data.instagram && data.instagram.link) {
+					$('#social').append('<li class="icon fa-instagram"><a href="' + data.instagram.link + '">@' + data.instagram.id + '</a></li>')
+				}
+
+				if (data.twitter && data.twitter.link) {
+					$('#social').append('<li class="icon fa-twitter"><a href="' + data.twitter.link + '">@' + data.twitter.id + '</a></li>')
+				}
+
+				return Promise.resolve();
 			})
 			.then(() => ready());
 
 	// Ready event.
 		var ready = function() {
-			// Vars.
-				var	$window = $(window),
-					$document = $(document),
-					$body = $('body'),
-					$html = $('html'),
-					$bodyHtml = $('body,html'),
-					$wrapper = $('#wrapper');
-
-			// Disable animations/transitions until the page has loaded.
-				$body.addClass('is-loading');
 
 				// $window.on('load', function() {
 					window.setTimeout(function() {

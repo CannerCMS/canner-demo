@@ -15,12 +15,34 @@ module.exports = {
     title: '多功能後台',
     description: '為客戶設計一個好用的後台要花非常多的時間，我們讓您可以專注在您最擅長的事情。把後台全部輕易的在 Canner 上解決。',
     icons: [
-      'image',
-      'server',
-      'code',
-      'cloud',
-      'users',
-      'cogs'
+      // {'icon': 'image'},
+      // {'icon': 'server'},
+      // {'icon': 'code'},
+      // {'icon': 'cloud'},
+      // {'icon': 'users'},
+      // {'icon': 'cogs'}
     ]
+  },
+  third: {
+    title: '你還在猶豫什麼呢？',
+    description: '未來在做任何一般企業網站、部落格網站、E-commerce 網站、等等...。都可以在 Canner 平台很輕易地架設一個易用、快速、安全的後台',
+    image: imageService.image('/statics/images/pic03.jpg')
+  },
+  contact: {
+    title: '聯絡我們',
+    description: '如您有任何問題、任何需求。請直接 Email 或電話詢問我們喔！',
+    facebook: {
+      id: 'cannerweb',
+      link: 'https://www.facebook.com/cannerweb/'
+    },
+    twitter: {
+      id: 'cannerio',
+      link: 'https://twitter.com/cannerio'
+    },
+    medium: {
+      id: 'canner-io-易開科技',
+      link: 'https://medium.com/canner-io'
+    },
+    copy: 'Canner 易開科技'
   }
 }
