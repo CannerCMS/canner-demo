@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@canner/canner-tools": "^0.3.8"
+    "@canner/canner-functions": "^0.1.2",
+    "@canner/canner-tools": "^0.3.8",
+    "kcors": "^2.2.1"
   }
 }
