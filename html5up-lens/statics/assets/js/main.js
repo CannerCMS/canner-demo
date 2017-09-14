@@ -507,6 +507,7 @@ var main = (function($) { var _ = {
 				$('#header #instagram').attr('href', data.instagram);
 				$('#header #github').attr('href', data.github);
 				$('#header #email').attr('href', data.email);
+				$('#footer #copy').html(data.copy);
 
 				return db.array('photos').find().exec();
 			})
@@ -514,8 +515,8 @@ var main = (function($) { var _ = {
 				photos.forEach((photo, i) => {
 					var picSection = '<article>';
 					picSection += '<a class="thumbnail" href="' + photo.image + '" data-position="top center"><img src="' + photo.thumb + '" alt="" /></a>';
-					picSection += '<h2>' + photo.title + '</h2>';
-					picSection += '<p>' + photo.description + '</p>';
+					picSection += '<h2>' + photo.imgTitle + '</h2>';
+					picSection += '<p>' + photo.imgDescription + '</p>';
 					picSection += '</article>';
 
 					$('#thumbnails').append(picSection);

@@ -4,13 +4,15 @@ const twitter = CannerTypes.string().description('Twitter 帳號').ui('link');
 const github = CannerTypes.string().description('Github 帳號').ui('link');
 const instagram = CannerTypes.string().description('Instagram 帳號').ui('link');
 const email = CannerTypes.string().description('Email').ui('link');
+const copy = CannerTypes.string().description('Copyright');
 const main = CannerTypes.object({
   title,
   description,
   twitter,
   github,
   instagram,
-  email
+  email,
+  copy
 }).description('主設定');
 
 // images
