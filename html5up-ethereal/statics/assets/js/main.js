@@ -76,9 +76,44 @@
 			xshort: '(min-aspect-ratio: 16/6)'
 		});
 
-	// Ready event.
-		$(function() {
+		/**
+		 * connect to Canner database
+		 */
 
+		var db = new CannerApi('59ba598dc51d6f1636f18c34').connect();
+
+		db.object('main').get().exec()
+			.then((data) => {
+				// main
+				$('#main h1').html(data.title);
+				$('#main p').html(data.description);
+				$('#main img').attr('src', data.image);
+
+				return db.object('first').get().exec();
+			})
+			.then((data) => {
+				// first
+				$('#first h2').html(data.title);
+				$('#first p').html(data.description);
+				$('#first img').attr('src', data.image);
+
+				return db.object('second').get().exec();
+			})
+			.then((data) => {
+				// second
+				$('#second h2').html(data.title);
+				$('#second p').html(data.description);
+				data.icons.forEach((icon) => {
+					$('#second ul')
+						.append('<li><span class="icon fa-' + icon + '"><span class="label">' + icon + '</span></span></li>');
+				})
+
+				return db.object('second').get().exec();
+			})
+			.then(() => ready());
+
+	// Ready event.
+		var ready = function() {
 			// Vars.
 				var	$window = $(window),
 					$document = $(document),
@@ -90,11 +125,11 @@
 			// Disable animations/transitions until the page has loaded.
 				$body.addClass('is-loading');
 
-				$window.on('load', function() {
+				// $window.on('load', function() {
 					window.setTimeout(function() {
 						$body.removeClass('is-loading');
 					}, 100);
-				});
+				// });
 
 			// Tweaks/fixes.
 
@@ -753,6 +788,6 @@
 
 							});
 
-		});
+		};
 
 })(jQuery);
