@@ -142,9 +142,6 @@ var main = (function($) { var _ = {
 			_.$window = $(window);
 			_.$body = $('body');
 
-		// Thumbnails.
-			_.$thumbnails = $('#thumbnails');
-
 		// Viewer.
 			_.$viewer = $(
 				'<div id="viewer">' +
@@ -155,6 +152,9 @@ var main = (function($) { var _ = {
 					'</div>' +
 				'</div>'
 			).appendTo(_.$body);
+
+		// Thumbnails.
+			_.$thumbnails = $('#thumbnails');
 
 		// Nav.
 			_.$navNext = _.$viewer.find('.nav-next');
@@ -186,22 +186,16 @@ var main = (function($) { var _ = {
 	 */
 	initEvents: function() {
 
-		// Window. initial load body
-
 			// Remove is-loading-* classes on load.
-				_.$window.on('load', function() {
+				_.$body.removeClass('is-loading-0');
 
-					_.$body.removeClass('is-loading-0');
+				window.setTimeout(function() {
+					_.$body.removeClass('is-loading-1');
+				}, 100);
 
-					window.setTimeout(function() {
-						_.$body.removeClass('is-loading-1');
-					}, 100);
-
-					window.setTimeout(function() {
-						_.$body.removeClass('is-loading-2');
-					}, 100 + Math.max(_.settings.layoutDuration - 150, 0));
-
-				});
+				window.setTimeout(function() {
+					_.$body.removeClass('is-loading-2');
+				}, 100 + Math.max(_.settings.layoutDuration - 150, 0));
 
 			// Disable animations/transitions on resize.
 				var resizeTimeout;
@@ -388,7 +382,6 @@ var main = (function($) { var _ = {
 	 * Initialize viewer.
 	 */
 	initViewer: function() {
-
 		// Bind thumbnail click event.
 			_.$thumbnails
 				.on('click', '.thumbnail', function(event) {
@@ -432,15 +425,15 @@ var main = (function($) { var _ = {
 					// Slide.
 
 						// Create elements.
-	 						s.$slide = $('<div class="slide"><div class="caption"></div><div class="image"></div></div>');
+							s.$slide = $('<div class="slide"><div class="caption"></div><div class="image"></div></div>');
 
-	 					// Image.
- 							s.$slideImage = s.$slide.children('.image');
+						// Image.
+							s.$slideImage = s.$slide.children('.image');
 
- 							// Set background stuff.
-	 							s.$slideImage
-		 							.css('background-image', '')
-		 							.css('background-position', ($thumbnail.data('position') || 'center'));
+							// Set background stuff.
+								s.$slideImage
+									.css('background-image', '')
+									.css('background-position', ($thumbnail.data('position') || 'center'));
 
 						// Caption.
 							s.$slideCaption = s.$slide.find('.caption');
@@ -472,7 +465,6 @@ var main = (function($) { var _ = {
 						$thumbnail.data('index', _.slides.length - 1);
 
 				});
-
 	},
 
 	/**
@@ -497,24 +489,55 @@ var main = (function($) { var _ = {
 				xsmall: '(max-width: 480px)'
 			});
 
-		// Everything else.
-			_.initProperties();
-			_.initViewer();
-			_.initEvents();
+		
+		/**
+		 * connect to Canner database
+		 */
+		var db = new CannerApi('59b9f2fec51d6f1636f18a24').connect();
+		
+		db.object('main').get().exec()
+			.then((data) => {
+				$('#header h1').html(data.title);
+				$('#header p').html(data.description);
+				$('#header #twitter').attr('href', data.twitter);
+				$('#header #instagram').attr('href', data.instagram);
+				$('#header #github').attr('href', data.github);
+				$('#header #email').attr('href', data.email);
 
-		// Initial slide.
-			window.setTimeout(function() {
+				return db.array('photos').find().exec();
+			})
+			.then((photos) => {
+				photos.forEach((photo, i) => {
+					var picSection = '<article>';
+					picSection += '<a class="thumbnail" href="' + photo.image + '" data-position="top center"><img src="' + photo.thumb + '" alt="" /></a>';
+					picSection += '<h2>' + photo.title + '</h2>';
+					picSection += '<p>' + photo.description + '</p>';
+					picSection += '</article>';
 
-				// Show first slide if xsmall isn't active or it just deactivated.
-					skel.on('-xsmall !xsmall', function() {
+					$('#thumbnails').append(picSection);
+				});
 
-						if (_.current === null)
-							_.switchTo(0, true);
+				return Promise.resolve();
+			})
+			.then(() => {
+				// Everything else.
+					_.initProperties();
+					_.initViewer();
+					_.initEvents();
 
-					});
+				// Initial slide.
+					window.setTimeout(function() {
 
-			}, 0);
+						// Show first slide if xsmall isn't active or it just deactivated.
+							skel.on('-xsmall !xsmall', function() {
 
+								if (_.current === null)
+									_.switchTo(0, true);
+
+							});
+
+					}, 0);
+			});
 	},
 
 	/**
