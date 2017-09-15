@@ -1,6 +1,5 @@
 const {https} = require('@canner/canner-functions');
 const cors = require('kcors');
-
 const corsMid = cors({
   allowHeaders: ["Content-Type", "Accept"],
   origin: process.env.NODE_ENV === 'production' ? 'http://delicate-unit-1908.cannerapp.com' : '*'

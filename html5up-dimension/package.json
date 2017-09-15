@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@canner/canner-tools": "^0.3.10"
+  }
+}
