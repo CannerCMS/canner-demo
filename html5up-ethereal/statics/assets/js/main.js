@@ -159,6 +159,41 @@
 	// Ready event.
 		var ready = function() {
 
+			// setup form
+
+			$('#contact-form').submit(function(e) {
+				var url = "https://www.canner.io/functions/delicate-unit-1908/send";
+				e.preventDefault();
+
+				var formData = $('#contact-form').serializeArray()
+
+				if (!formData[0].value) {
+					return swal("必填", "姓名欄位必填", "error");
+				}
+
+				if (!formData[1].value) {
+					return swal("必填", "Email 欄位必填", "error");
+				}
+
+				if (!formData[2].value) {
+					return swal("必填", "訊息欄位必填", "error");
+				}
+
+				$.ajax({
+					type: "POST",
+					url: url,
+					data: $('#contact-form').serialize(),
+					success: function(data) {
+						// alert
+						swal("以傳送", "已收到您的訊息，會盡快回覆您！", "success");
+						$('#contact-form')[0].reset();
+					},
+					error: function() {
+						swal("錯誤", "傳送發生錯誤，請稍後嘗試！", "error");
+					}
+				});
+			});
+
 				// $window.on('load', function() {
 					window.setTimeout(function() {
 						$body.removeClass('is-loading');
