@@ -30,7 +30,7 @@
 		height: _size(element-height) * 1.1;
 		letter-spacing: 0.15rem;
 		line-height: _size(element-height) * 1.1;
-		padding: 0 1.5rem 0 (1.5rem + 0.15rem) !important;
+		padding: 0 1.5rem 0 (1.5rem + 0.15rem);
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -153,4 +153,8 @@
 			cursor: default;
 			opacity: 0.5;
 		}
+	}
+
+	button {
+		padding: 0 1.5rem 0 (1.5rem + 0.15rem) !important;
 	}

@@ -1051,7 +1051,7 @@ button,
   height: 2.75rem;
   letter-spacing: 0.15rem;
   line-height: 2.75rem;
-  padding: 0 1.5rem 0 1.65rem !important;
+  padding: 0 1.5rem 0 1.65rem;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -1210,6 +1210,9 @@ button,
     pointer-events: none;
     cursor: default;
     opacity: 0.5; }
+
+button {
+  padding: 0 1.5rem 0 1.65rem !important; }
 
 /* Gallery */
 @-moz-keyframes gallery-modal-spinner {
