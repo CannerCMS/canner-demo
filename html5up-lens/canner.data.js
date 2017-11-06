@@ -1,5 +1,3 @@
-const {imageService} = require('@canner/cli');
-
 module.exports = {
   "main": {
     "title": "Canner 範例",

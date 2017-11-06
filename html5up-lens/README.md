@@ -4,12 +4,6 @@ canner demo using HTML5Up-LENS theme
 
 go to https://github.com/Canner/canner-html5up-demo/blob/master/html5up-lens/statics/assets/js/main.js#L500 change `API KEY` to your project `API KEY`
 
-install dependencies
-
-```bash
-yarn install # or npm install
-```
-
 install canner-tools
 
 ```
