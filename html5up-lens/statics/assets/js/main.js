@@ -497,7 +497,7 @@ var main = (function($) { var _ = {
 		/**
 		 * connect to Canner database
 		 */
-		var db = new CannerApi('59b9f2fec51d6f1636f18a24').connect();
+		var db = new CannerApi('API KEY').connect();
 		
 		db.object('main').get().exec()
 			.then((data) => {
