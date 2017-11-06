@@ -5,7 +5,7 @@ canner demo using HTML5Up-LENS theme
 install canner-tools
 
 ```
-npm i -g canner-tools
+npm i -g canner-cli
 ```
 
 after install, login your account and select an app.

@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@canner/canner-tools": "^0.3.8"
+    "@canner/cli": "^0.3.8"
   }
 }

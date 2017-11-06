@@ -1,4 +1,4 @@
-const {imageService} = require('@canner/canner-tools');
+const {imageService} = require('@canner/cli');
 
 module.exports = {
   "main": {
