@@ -1,8 +1,8 @@
-const title = CannerTypes.string().description('網站標題');
-const description = CannerTypes.string().description('網站敘述').ui('editor');
-const twitter = CannerTypes.string().description('Twitter 帳號').ui('link');
-const github = CannerTypes.string().description('Github 帳號').ui('link');
-const instagram = CannerTypes.string().description('Instagram 帳號').ui('link');
+const title = CannerTypes.string().description('Website title');
+const description = CannerTypes.string().description('Website description').ui('editor');
+const twitter = CannerTypes.string().description('Twitter account').ui('link');
+const github = CannerTypes.string().description('Github account').ui('link');
+const instagram = CannerTypes.string().description('Instagram account').ui('link');
 const email = CannerTypes.string().description('Email').ui('link');
 const copy = CannerTypes.string().description('Copyright');
 const main = CannerTypes.object({
@@ -13,18 +13,18 @@ const main = CannerTypes.object({
   instagram,
   email,
   copy
-}).description('主設定');
+}).description('Main page');
 
 // images
-const image = CannerTypes.string().description('大圖片').ui('image').uiParams({service: 'canner'});
-const thumb = CannerTypes.string().description('大頭照圖片（小圖）').ui('image').uiParams({service: 'canner'});
-const imgTitle = CannerTypes.string().description('圖片標題');
-const imgDescription = CannerTypes.string().description('圖片敘述');
+const image = CannerTypes.string().description('Main image').ui('image').uiParams({service: 'canner'});
+const thumb = CannerTypes.string().description('Thumb image').ui('image').uiParams({service: 'canner'});
+const imgTitle = CannerTypes.string().description('Image title');
+const imgDescription = CannerTypes.string().description('Image description');
 const photos = CannerTypes.array({
   image,
   thumb,
   imgTitle,
   imgDescription
-}).description('相片集');
+}).description('Gallery');
 
 module.exports = {main, photos};
