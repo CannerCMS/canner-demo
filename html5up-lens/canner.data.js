@@ -1,12 +1,12 @@
 module.exports = {
   "main": {
-    "title": "Canner 範例",
-    "description": "這個範例是使用 Canner 後台架設，讓你能夠用快速建立任何網站的後台系統",
+    "title": "CannerIO example",
+    "description": "This tutorial help you to learn how to build a HTML5UP CMS with CannerIO",
     "twitter": "https://twitter.com/cannerio",
     "github": "https://github.com/Canner",
     "instagram": "#",
     "email": "emailto:contact@canner.io",
-    "copy": "Canner 易開網"
+    "copy": "CannerIO"
   },
   "photos": [
     {
