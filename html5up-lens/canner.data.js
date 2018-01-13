@@ -10,44 +10,44 @@ module.exports = {
   },
   "photos": [
     {
-      "image": imageService.image("/statics/images/fulls/01.jpg"),
-      "thumb": imageService.image("/statics/images/thumbs/01.jpg"),
+      "image": imageService.image("/public/statics/images/fulls/01.jpg"),
+      "thumb": imageService.image("/public/statics/images/thumbs/01.jpg"),
       "imgTitle": "Diam tempus accumsan",
       "imgDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
-      "image": imageService.image("/statics/images/fulls/02.jpg"),
-      "thumb": imageService.image("/statics/images/thumbs/02.jpg"),
+      "image": imageService.image("/public/statics/images/fulls/02.jpg"),
+      "thumb": imageService.image("/public/statics/images/thumbs/02.jpg"),
       "imgTitle": "Diam tempus accumsan",
       "imgDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
-      "image": imageService.image("/statics/images/fulls/03.jpg"),
-      "thumb": imageService.image("/statics/images/thumbs/03.jpg"),
+      "image": imageService.image("/public/statics/images/fulls/03.jpg"),
+      "thumb": imageService.image("/public/statics/images/thumbs/03.jpg"),
       "imgTitle": "Diam tempus accumsan",
       "imgDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
-      "image": imageService.image("/statics/images/fulls/04.jpg"),
-      "thumb": imageService.image("/statics/images/thumbs/04.jpg"),
+      "image": imageService.image("/public/statics/images/fulls/04.jpg"),
+      "thumb": imageService.image("/public/statics/images/thumbs/04.jpg"),
       "imgTitle": "Diam tempus accumsan",
       "imgDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
-      "image": imageService.image("/statics/images/fulls/05.jpg"),
-      "thumb": imageService.image("/statics/images/thumbs/05.jpg"),
+      "image": imageService.image("/public/statics/images/fulls/05.jpg"),
+      "thumb": imageService.image("/public/statics/images/thumbs/05.jpg"),
       "imgTitle": "Diam tempus accumsan",
       "imgDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
-      "image": imageService.image("/statics/images/fulls/06.jpg"),
-      "thumb": imageService.image("/statics/images/thumbs/06.jpg"),
+      "image": imageService.image("/public/statics/images/fulls/06.jpg"),
+      "thumb": imageService.image("/public/statics/images/thumbs/06.jpg"),
       "imgTitle": "Diam tempus accumsan",
       "imgDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
-      "image": imageService.image("/statics/images/fulls/07.jpg"),
-      "thumb": imageService.image("/statics/images/thumbs/07.jpg"),
+      "image": imageService.image("/public/statics/images/fulls/07.jpg"),
+      "thumb": imageService.image("/public/statics/images/thumbs/07.jpg"),
       "imgTitle": "Diam tempus accumsan",
       "imgDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     }

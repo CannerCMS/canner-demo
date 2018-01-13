@@ -46,7 +46,20 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="https://static.canner.io/canner-api/0.0.21/canner-api.js"></script>
+
+			<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+			<script>
+				// Initialize Firebase
+				var config = {
+					apiKey: "API_KEY",
+					authDomain: "AUTH_DOMAIN",
+					databaseURL: "DATABASE_URL",
+					projectId: "PROJECT_ID",
+					storageBucket: "STORAGE_BUCKET",
+					messagingSenderId: "MESSAGING_SENDER_ID"
+				};
+				firebase.initializeApp(config);
+			</script>
 			<script src="/statics/assets/js/jquery.min.js"></script>
 			<script src="/statics/assets/js/skel.min.js"></script>
 			<!--[if lte IE 8]><script src="/statics/assets/js/ie/respond.min.js"></script><![endif]-->

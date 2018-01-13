@@ -492,15 +492,18 @@ var main = (function($) { var _ = {
         small: '(max-width: 736px)',
         xsmall: '(max-width: 480px)'
       });
-
     
     /**
-     * connect to Canner database
+     * connect to Firebase database
      */
-    var db = new CannerApi('API KEY').connect();
-    
-    db.object('main').get().exec()
-      .then((data) => {
+    var db = firebase.database();
+    firebase.auth().signInAnonymously()
+      .then(function() {
+        return db.ref('main').once('value');
+      })
+      .then(function(snapshot) {
+        var data = snapshot.val();
+
         $('#header h1').html(data.title);
         $('#header p').html(data.description);
         $('#header #twitter').attr('href', data.twitter);
@@ -509,10 +512,10 @@ var main = (function($) { var _ = {
         $('#header #email').attr('href', data.email);
         $('#footer #copy').html(data.copy);
 
-        return db.array('photos').find().exec();
+        return db.ref('photos').once('value');
       })
-      .then((photos) => {
-        photos.forEach((photo, i) => {
+      .then(function(snapshot) {
+        Object.keys(snapshot.val()).forEach(function(photo, i) {
           var picSection = '<article>';
           picSection += '<a class="thumbnail" href="' + photo.image + '" data-position="top center"><img src="' + photo.thumb + '" alt="" /></a>';
           picSection += '<h2>' + photo.imgTitle + '</h2>';
@@ -524,7 +527,7 @@ var main = (function($) { var _ = {
 
         return Promise.resolve();
       })
-      .then(() => {
+      .then(function() {
         // Everything else.
           _.initProperties();
           _.initViewer();

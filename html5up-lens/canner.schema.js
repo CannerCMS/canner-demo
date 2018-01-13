@@ -1,3 +1,12 @@
+CannerTypes.endpoint('firebase', {
+  apiKey: "API_KEY",
+  authDomain: "AUTH_DOMAIN",
+  databaseURL: "DATABASE_URL",
+  projectId: "PROJECT_ID",
+  storageBucket: "STORAGE_BUCKET",
+  messagingSenderId: "MESSAGING_SENDER_ID"
+})
+
 const title = CannerTypes.string().description('Website title');
 const description = CannerTypes.string().description('Website description').ui('editor');
 const twitter = CannerTypes.string().description('Twitter account').ui('link');
@@ -16,8 +25,8 @@ const main = CannerTypes.object({
 }).description('Main page');
 
 // images
-const image = CannerTypes.string().description('Main image').ui('image').uiParams({service: 'canner'});
-const thumb = CannerTypes.string().description('Thumb image').ui('image').uiParams({service: 'canner'});
+const image = CannerTypes.string().description('Main image').ui('image');
+const thumb = CannerTypes.string().description('Thumb image').ui('image');
 const imgTitle = CannerTypes.string().description('Image title');
 const imgDescription = CannerTypes.string().description('Image description');
 const photos = CannerTypes.array({
