@@ -14,4 +14,4 @@ Live Demo: https://throbbing-disk-3708.cannerapp.com/
 
 ## HTML5UP-lens
 
-Live Demo: https://gentle-salad-9176.cannerapp.com/
+Live Demo: https://html5up-lens.firebaseapp.com/
