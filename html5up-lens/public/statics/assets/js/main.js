@@ -515,15 +515,18 @@ var main = (function($) { var _ = {
         return db.ref('photos').once('value');
       })
       .then(function(snapshot) {
-        Object.keys(snapshot.val()).forEach(function(photo, i) {
-          var picSection = '<article>';
-          picSection += '<a class="thumbnail" href="' + photo.image + '" data-position="top center"><img src="' + photo.thumb + '" alt="" /></a>';
-          picSection += '<h2>' + photo.imgTitle + '</h2>';
-          picSection += '<p>' + photo.imgDescription + '</p>';
-          picSection += '</article>';
+        console.log(snapshot.val())
+        Object.keys(snapshot.val())
+          .map(key => snapshot.val()[key])
+          .forEach(function(photo, i) {
+            var picSection = '<article>';
+            picSection += '<a class="thumbnail" href="' + photo.image + '" data-position="top center"><img src="' + photo.thumb + '" alt="" /></a>';
+            picSection += '<h2>' + photo.imgTitle + '</h2>';
+            picSection += '<p>' + photo.imgDescription + '</p>';
+            picSection += '</article>';
 
-          $('#thumbnails').append(picSection);
-        });
+            $('#thumbnails').append(picSection);
+          });
 
         return Promise.resolve();
       })

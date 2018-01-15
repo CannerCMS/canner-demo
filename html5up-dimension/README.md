@@ -2,30 +2,57 @@
 
 canner demo using HTML5Up-dimension theme
 
-install canner-tools
+## Steps
+
+#### 1. Create a new project at Firebase
+#### 2. Install [Firebase Tool](https://github.com/firebase/firebase-tools)
+#### 3. Enable Anonymous login at your Firebase project
+#### 4. Install `@canner/cli`
 
 ```
-npm i -g canner-tools
+npm i -g @canner/cli
 ```
 
-after install, login your account and select an app.
+#### 5. Create project at Canner
+#### 6. Update `public/index.html` & `canner.schema.js` Firebase config.
 
-Upload your static files
+```js
+  var config = {
+    apiKey: "API_KEY",
+    authDomain: "AUTH_DOMAIN",
+    databaseURL: "DATABASE_URL",
+    projectId: "PROJECT_ID",
+    storageBucket: "STORAGE_BUCKET",
+    messagingSenderId: "MESSAGING_SENDER_ID"
+  };
+```
+
+#### 7. Deploy your website on [Firebase hosting](https://firebase.google.com/docs/hosting/)
+
+Select project
 
 ```
-canner statics:upload
+  firebase init
 ```
+
+Deploy host
+
+```
+  firebase deploy
+```
+
+#### 8. Deploy your data to Firebase, and schema to Canner through Canner cli tool.
 
 Deploy schema
 
 ```
-canner schema:deploy
+  canner schema:deploy
 ```
 
-Import default data
+Import data
 
 ```
-canner data:import
+  canner data:import
 ```
 
 
