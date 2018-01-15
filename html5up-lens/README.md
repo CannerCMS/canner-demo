@@ -12,12 +12,6 @@ npm i -g @canner/cli
 
 after install, login your account and select an app.
 
-Upload your static files
-
-```
-canner statics:upload
-```
-
 Deploy schema
 
 ```
