@@ -7,13 +7,13 @@ CannerTypes.endpoint('firebase', {
   messagingSenderId: "MESSAGING_SENDER_ID"
 })
 
-const title = CannerTypes.string().description('Website title');
-const description = CannerTypes.string().description('Website description').ui('editor');
-const twitter = CannerTypes.string().description('Twitter account').ui('link');
-const github = CannerTypes.string().description('Github account').ui('link');
-const instagram = CannerTypes.string().description('Instagram account').ui('link');
-const email = CannerTypes.string().description('Email').ui('link');
-const copy = CannerTypes.string().description('Copyright');
+const title = CannerTypes.string().title('Website title').description('Please enter a title of your website');
+const description = CannerTypes.string().title('Description').description('Enter description of your website').ui('editor');
+const twitter = CannerTypes.string().title('Twitter').description('Twitter account').ui('link');
+const github = CannerTypes.string().title('Github').description('Github account').ui('link');
+const instagram = CannerTypes.string().title('Instagram').description('Instagram account').ui('link');
+const email = CannerTypes.string().title('Email').description('Enter your Email here').ui('link');
+const copy = CannerTypes.string().title('Copyright').description('What is your copyright?');
 const main = CannerTypes.object({
   title,
   description,
@@ -25,8 +25,8 @@ const main = CannerTypes.object({
 }).description('Main page');
 
 // images
-const image = CannerTypes.string().description('Main image').ui('image');
-const thumb = CannerTypes.string().description('Thumb image').ui('image');
+const image = CannerTypes.string().title('Main image').description('Original image in your gallery').ui('image');
+const thumb = CannerTypes.string().description('Thumb image').description('Thumb image in your gallery').ui('image');
 const imgTitle = CannerTypes.string().description('Image title');
 const imgDescription = CannerTypes.string().description('Image description');
 const photos = CannerTypes.array({

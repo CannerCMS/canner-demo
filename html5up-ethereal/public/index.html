@@ -101,7 +101,7 @@
 									<div class="span-3-25">
 										<form id="contact-form">
 											<div class="field half">
-												<label for="name">姓名</label>
+												<label for="name">Name</label>
 												<input type="text" name="name" id="name" />
 											</div>
 											<div class="field half">
@@ -109,11 +109,11 @@
 												<input type="email" name="email" id="email" />
 											</div>
 											<div class="field">
-												<label for="message">訊息</label>
+												<label for="message">Message</label>
 												<textarea name="message" id="message" rows="4"></textarea>
 											</div>
 											<ul class="actions">
-												<li><input type="submit" value="送出" class="button special" /></li>
+												<li><input type="submit" value="Submit" class="button special" /></li>
 											</ul>
 										</form>
 									</div>
@@ -132,7 +132,19 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="https://static.canner.io/canner-api/0.0.21/canner-api.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+			<script>
+				// Initialize Firebase
+				var config = {
+					apiKey: "API_KEY",
+					authDomain: "AUTH_DOMAIN",
+					databaseURL: "DATABASE_URL",
+					projectId: "PROJECT_ID",
+					storageBucket: "STORAGE_BUCKET",
+					messagingSenderId: "MESSAGING_SENDER_ID"
+				};
+				firebase.initializeApp(config);
+			</script>
 			<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 			<script src="/statics/assets/js/jquery.min.js"></script>
 			<script src="/statics/assets/js/skel.min.js"></script>

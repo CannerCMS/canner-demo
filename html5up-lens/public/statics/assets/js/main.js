@@ -515,7 +515,6 @@ var main = (function($) { var _ = {
         return db.ref('photos').once('value');
       })
       .then(function(snapshot) {
-        console.log(snapshot.val())
         Object.keys(snapshot.val())
           .map(key => snapshot.val()[key])
           .forEach(function(photo, i) {

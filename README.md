@@ -6,7 +6,7 @@ deploy html5up themes on Canner
 
 ## HTML5UP-ethereal
 
-Live Demo: https://delicate-unit-1908.cannerapp.com/
+Live Demo: https://case-app-8017f.firebaseapp.com/
 
 ## HTML5UP-dimension
 

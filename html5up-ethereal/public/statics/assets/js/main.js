@@ -91,45 +91,54 @@
 		 * connect to Canner database
 		 */
 
-		var db = new CannerApi('59ba598dc51d6f1636f18c34').connect();
+		var db = firebase.database();
 
-		db.object('main').get().exec()
-			.then((data) => {
+		firebase.auth().signInAnonymously()
+			.then(function() {
+				return db.ref('main').once('value');
+			})
+			.then(function(snapshot) {
+				var data = snapshot.val();
 				// main
 				$('#main h1').html(data.title);
 				$('#main p').html(data.description);
 				$('#main img').attr('src', data.image);
 
-				return db.object('first').get().exec();
+				return db.ref('first').once('value');
 			})
-			.then((data) => {
+			.then(function(snapshot) {
+				var data = snapshot.val();
 				// first
 				$('#first h2').html(data.title);
 				$('#first p').html(data.description);
 				$('#first img').attr('src', data.image);
 
-				return db.object('second').get().exec();
+				return db.ref('second').once('value');
 			})
-			.then((data) => {
+			.then(function(snapshot) {
+				var data = snapshot.val();
 				// second
 				$('#second h2').html(data.title);
 				$('#second p').html(data.description);
+
 				data.icons.forEach((item) => {
 					$('#second ul')
 						.append('<li><span class="icon fa-' + item.icon + '"><span class="label">' + item.icon + '</span></span></li>');
 				})
 
-				return db.object('third').get().exec();
+				return db.ref('third').once('value');
 			})
-			.then((data) => {
+			.then(function(snapshot) {
+				var data = snapshot.val();
 				// third
 				$('#third h2').html(data.title);
 				$('#third p').html(data.description);
 				$('#third img').attr('src', data.image);
 
-				return db.object('contact').get().exec();
+				return db.ref('contact').once('value');
 			})
-			.then((data) => {
+			.then(function(snapshot) {
+				var data = snapshot.val();
 				// contact
 				$('#contact h2').html(data.title);
 				$('#contact p').html(data.description);

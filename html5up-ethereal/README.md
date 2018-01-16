@@ -25,7 +25,11 @@ npm i -g @canner/cli
   };
 ```
 
-#### 7. Deploy your website on [Firebase hosting](https://firebase.google.com/docs/hosting/)
+#### 7. Download firebase private key
+
+go to "settings > service account" download private key, and put it in `cert` folder.
+
+#### 8. Deploy your website on [Firebase hosting](https://firebase.google.com/docs/hosting/)
 
 Select project
 
@@ -39,7 +43,7 @@ Deploy host
   firebase deploy
 ```
 
-#### 8. Deploy your data to Firebase, and schema to Canner through Canner cli tool.
+#### 9. Deploy your data to Firebase, and schema to Canner through Canner cli tool.
 
 Deploy schema
 
@@ -52,6 +56,17 @@ Import data
 ```
   canner data:import
 ```
+
+#### 10. Enable email feature
+
+You are able to use email feature, using Firebase cloud-function.
+
+If you use gmail, you should enable some features see step 7 [here](https://github.com/firebase/functions-samples/tree/master/quickstarts/email-users#setting-up-the-sample)
+
+```
+firebase functions:config:set gmail.email="myusername@gmail.com" gmail.password="secretpassword"
+```
+
 ### Credits:
 
 	Demo Images:
