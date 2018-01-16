@@ -27,7 +27,11 @@ npm i -g @canner/cli
   };
 ```
 
-#### 7. Deploy your website on [Firebase hosting](https://firebase.google.com/docs/hosting/)
+#### 7. Download firebase private key
+
+go to "settings > service account" download private key, and put it in `cert` folder.
+
+#### 8. Deploy your website on [Firebase hosting](https://firebase.google.com/docs/hosting/)
 
 Select project
 
@@ -41,7 +45,7 @@ Deploy host
   firebase deploy
 ```
 
-#### 8. Deploy your data to Firebase, and schema to Canner through Canner cli tool.
+#### 9. Deploy your data to Firebase, and schema to Canner through Canner cli tool.
 
 Deploy schema
 
@@ -54,7 +58,6 @@ Import data
 ```
   canner data:import
 ```
-
 
 ### Credits:
     - HTML5Up:
