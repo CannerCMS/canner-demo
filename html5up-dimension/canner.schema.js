@@ -1,7 +1,16 @@
-const icon = CannerTypes.string().description('網站 icon');
-const title = CannerTypes.string().description('網站標題');
-const description = CannerTypes.string().ui('editor').description('網站敘述');
-const background = CannerTypes.string().ui('image').uiParams({service: 'canner'}).description('網站背景');
+CannerTypes.endpoint('firebase', {
+  apiKey: "API_KEY",
+  authDomain: "AUTH_DOMAIN",
+  databaseURL: "DATABASE_URL",
+  projectId: "PROJECT_ID",
+  storageBucket: "STORAGE_BUCKET",
+  messagingSenderId: "MESSAGING_SENDER_ID"
+});
+
+const icon = CannerTypes.string().description('Website icon');
+const title = CannerTypes.string().description('Website title');
+const description = CannerTypes.string().ui('editor').description('description');
+const background = CannerTypes.string().ui('image').description('Background image');
 const copy = CannerTypes.string().description('Copyright');
 
 const header = CannerTypes.object({
@@ -10,58 +19,58 @@ const header = CannerTypes.object({
   description,
   background,
   copy
-}).description('主網站');
+}).description('Main page');
 
 // intro
-const introTitle = CannerTypes.string().description('簡介標題');
-const introContent = CannerTypes.string().ui('editor').description('簡介內容');
-const introImage = CannerTypes.string().ui('image').uiParams({service: 'canner'}).description('簡介圖片');
+const introTitle = CannerTypes.string().description('Intro title');
+const introContent = CannerTypes.string().ui('editor').description('Intro content');
+const introImage = CannerTypes.string().ui('image').description('Intro image');
 
 const intro = CannerTypes.object({
   title: introTitle,
   content: introContent,
   image: introImage
-}).description('簡介頁面');
+}).description('Introduction page');
 
 // work
-const workTitle = CannerTypes.string().description('工作標題');
-const workContent = CannerTypes.string().ui('editor').description('工作內容');
-const workImage = CannerTypes.string().ui('image').uiParams({service: 'canner'}).description('工作圖片');
+const workTitle = CannerTypes.string().description('Work title');
+const workContent = CannerTypes.string().ui('editor').description('Work content');
+const workImage = CannerTypes.string().ui('image').description('Work image');
 
 const work = CannerTypes.object({
   title: workTitle,
   content: workContent,
   image: workImage
-}).description('工作頁面');
+}).description('Work page');
 
 // about
-const aboutTitle = CannerTypes.string().description('關於標題');
-const aboutContent = CannerTypes.string().ui('editor').description('關於內容');
-const aboutImage = CannerTypes.string().ui('image').uiParams({service: 'canner'}).description('關於圖片');
+const aboutTitle = CannerTypes.string().description('About title');
+const aboutContent = CannerTypes.string().ui('editor').description('About content');
+const aboutImage = CannerTypes.string().ui('image').description('About image');
 
 const about = CannerTypes.object({
   title: aboutTitle,
   content: aboutContent,
   image: aboutImage
-}).description('關於頁面');
+}).description('About page');
 
 // contact
-const contactTitle = CannerTypes.string().description('聯絡我標題');
+const contactTitle = CannerTypes.string().description('Contact me title');
 
 const contactFacebook = CannerTypes.object({
-  link: CannerTypes.string().ui('link').description('你的 Facebook 網址')
+  link: CannerTypes.string().ui('link').description('Your Facebook address')
 });
 
 const contactTwitter = CannerTypes.object({
-  link: CannerTypes.string().ui('link').description('你的 Twitter 網址')
+  link: CannerTypes.string().ui('link').description('Your Twitter address')
 });
 
 const contactInstagram = CannerTypes.object({
-  link: CannerTypes.string().ui('link').description('你的 Instagram 網址')
+  link: CannerTypes.string().ui('link').description('Your Instagram address')
 });
 
 const contactGithub = CannerTypes.object({
-  link: CannerTypes.string().ui('link').description('你的 Github 網址')
+  link: CannerTypes.string().ui('link').description('Your Github address')
 });
 
 const contact = CannerTypes.object({
@@ -70,7 +79,7 @@ const contact = CannerTypes.object({
   twitter: contactTwitter,
   instagram: contactInstagram,
   github: contactGithub
-}).description('聯絡我頁面');
+}).description('Contact me');
 
 
 module.exports = {header, intro, work, about, contact};

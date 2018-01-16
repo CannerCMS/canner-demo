@@ -10,7 +10,7 @@ Live Demo: https://case-app-8017f.firebaseapp.com/
 
 ## HTML5UP-dimension
 
-Live Demo: https://throbbing-disk-3708.cannerapp.com/
+Live Demo: https://flamelin-f64b2.firebaseapp.com
 
 ## HTML5UP-lens
 

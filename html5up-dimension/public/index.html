@@ -70,7 +70,7 @@
 								<h2 class="major">Contact</h2>
 								<form method="post" action="#">
 									<div class="field half first">
-										<label for="name">姓名</label>
+										<label for="name">Name</label>
 										<input type="text" name="name" id="name" />
 									</div>
 									<div class="field half">
@@ -78,12 +78,12 @@
 										<input type="text" name="email" id="email" />
 									</div>
 									<div class="field">
-										<label for="message">內容</label>
+										<label for="message">Content</label>
 										<textarea name="message" id="message" rows="4"></textarea>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="送出訊息" class="special" /></li>
-										<li><input type="reset" value="重置" /></li>
+										<li><input type="submit" value="Submit" class="special" /></li>
+										<li><input type="reset" value="Reset" /></li>
 									</ul>
 								</form>
 								<ul class="icons" id="social">
@@ -102,7 +102,19 @@
 			<div id="bg"></div>
 
 		<!-- Scripts -->
-			<script src="https://static.canner.io/canner-api/0.0.21/canner-api.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+			<script>
+				// Initialize Firebase
+				var config = {
+					apiKey: "API_KEY",
+					authDomain: "AUTH_DOMAIN",
+					databaseURL: "DATABASE_URL",
+					projectId: "PROJECT_ID",
+					storageBucket: "STORAGE_BUCKET",
+					messagingSenderId: "MESSAGING_SENDER_ID"
+				};
+				firebase.initializeApp(config);
+			</script>
 			<script src="/statics/assets/js/jquery.min.js"></script>
 			<script src="/statics/assets/js/skel.min.js"></script>
 			<script src="/statics/assets/js/util.js"></script>

@@ -27,13 +27,17 @@
 		$body.addClass('is-loading');
 
 	/**
-	 * connect to Canner database
+	 * connect to Firebase database
 	 */
 
-		var db = new CannerApi('59bb374dc41c4323aa788d7f').connect();
+		var db = firebase.database();
 		
-		db.object('header').get().exec()
-			.then((data) => {
+		firebase.auth().signInAnonymously()
+      .then(function() {
+        return db.ref('header').once('value');
+      })
+			.then(function(snapshot) {
+				var data = snapshot.val();
 				// header
 				$('#header .logo').html('<span class="icon fa-' + data.icon + '"></span>');
 				$('#header h1').html(data.title);
@@ -45,36 +49,40 @@
 					$('head').append('<style>#bg::after {background-image: url("' + data.background + '")}</style>');
 				}
 
-				return db.object('intro').get().exec();
+				return db.ref('intro').once('value');
 			})
-			.then((data) => {
+			.then(function(snapshot) {
+				var data = snapshot.val();
 				// intro
 				$('#list-intro').html(data.title);
 				$('#intro h2').html(data.title);
 				$('#intro img').attr('src', data.image);
 				$('#intro p').html(data.content);
 
-				return db.object('work').get().exec();
+				return db.ref('work').once('value');
 			})
-			.then((data) => {
+			.then(function(snapshot) {
+				var data = snapshot.val();
 				// work
 				$('#list-work').html(data.title);
 				$('#work h2').html(data.title);
 				$('#work img').attr('src', data.image);
 				$('#work p').html(data.content);
 
-				return db.object('about').get().exec();
+				return db.ref('about').once('value');
 			})
-			.then((data) => {
+			.then(function(snapshot) {
+				var data = snapshot.val();
 				// about
 				$('#list-about').html(data.title);
 				$('#about h2').html(data.title);
 				$('#about img').attr('src', data.image);
 				$('#about p').html(data.content);
 
-				return db.object('contact').get().exec();
+				return db.ref('contact').once('value');
 			})
-			.then((data) => {
+			.then(function(snapshot) {
+				var data = snapshot.val();
 				// contact
 				$('#list-contact').html(data.title);
 				$('#contact h2').html(data.title);
@@ -98,7 +106,7 @@
 
 				return Promise.resolve();
 			})
-			.then(() => ready());
+			.then(function() {ready()});
 
 	var ready = function() {
 
