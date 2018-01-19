@@ -4,15 +4,14 @@
 
 #### 1. Create a new project at Firebase
 #### 2. Install [Firebase Tool](https://github.com/firebase/firebase-tools)
-#### 3. Enable Anonymous login at your Firebase project
-#### 4. Install `@canner/cli`
+#### 3. Install `@canner/cli`
 
 ```
 npm i -g @canner/cli
 ```
 
-#### 5. Create project at Canner
-#### 6. Update `public/index.html` & `canner.schema.js` Firebase config.
+#### 4. Create project at Canner
+#### 5. Update `public/index.html` & `canner.schema.js` Firebase config.
 
 ```js
   var config = {
@@ -25,11 +24,11 @@ npm i -g @canner/cli
   };
 ```
 
-#### 7. Download firebase private key
+#### 6. Download firebase private key
 
 go to "settings > service account" download private key, and put it in `cert` folder.
 
-#### 8. Deploy your website on [Firebase hosting](https://firebase.google.com/docs/hosting/)
+#### 7. Deploy your website on [Firebase hosting](https://firebase.google.com/docs/hosting/)
 
 Select project
 
@@ -43,7 +42,7 @@ Deploy host
   firebase deploy
 ```
 
-#### 9. Deploy your data to Firebase, and schema to Canner through Canner cli tool.
+#### 8. Deploy your data to Firebase, and schema to Canner through Canner cli tool.
 
 Deploy schema
 
@@ -57,7 +56,7 @@ Import data
   canner data:import
 ```
 
-#### 10. Enable email feature
+#### 9. Enable email feature
 
 You are able to use email feature, using Firebase cloud-function.
 
