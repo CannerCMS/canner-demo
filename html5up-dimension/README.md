@@ -2,6 +2,8 @@
 
 canner demo using HTML5Up-dimension theme
 
+> This project use Firebase realtime database, learn more: https://docs.canner.io/zh/get-started/create-blog
+
 ## Steps
 
 #### 1. Create a new project at Firebase
