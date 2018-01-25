@@ -1,5 +1,7 @@
 # HTML5Up-IDENTITY canner Demo
 
+> This project use Firestore as database
+
 canner demo using HTML5Up-IDENTITY theme
 
 ## Steps
