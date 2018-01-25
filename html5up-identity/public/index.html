@@ -14,6 +14,7 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="/assets/js/jquery.min.js"></script>
 	</head>
 	<body class="is-loading">
 
@@ -29,9 +30,9 @@
 						</header>
 						<footer>
 							<ul class="icons">
-								<li><a href="#" class="fa-twitter">Twitter</a></li>
-								<li><a href="#" class="fa-instagram">Instagram</a></li>
-								<li><a href="#" class="fa-facebook">Facebook</a></li>
+								<li id="twitter"><a href="#" class="fa-twitter">Twitter</a></li>
+								<li id="instagram"><a href="#" class="fa-instagram">Instagram</a></li>
+								<li id="facebook"><a href="#" class="fa-facebook">Facebook</a></li>
 							</ul>
 						</footer>
 					</section>
@@ -39,13 +40,14 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<ul class="copyright">
-							<li>&copy; Jane Doe</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>&copy; <span id="name">Jane Doe</span></li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 						</ul>
 					</footer>
 
 			</div>
 
 			<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
 			<script>
 				// Initialize Firebase
 				var config = {
@@ -63,8 +65,29 @@
 			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
 			<script>
 				if ('addEventListener' in window) {
-					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
-					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+					var db = firebase.firestore();
+
+					var mainRef = db.collection('object').doc('main');
+					mainRef.get().then(function(doc) {
+						if (doc.exists) {
+							var data = doc.data();
+
+							$('#main header h1').html(data.name);
+							$('#name').html(data.name);
+							$('#main header p').html(data.description);
+							$('#main img').attr('src', data.thumb);
+							$('#twitter').attr('href', data.twitter);
+							$('#instagram').attr('href', data.instagram);
+							$('#facebook').attr('href', data.facebook);
+
+							$(document).ready(function() { 
+								document.body.className = document.body.className.replace(/\bis-loading\b/, '');
+							});
+							document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+						}
+					}).catch(function(error) {
+						console.log("Error getting document:", error);
+					})
 				}
 			</script>
 
