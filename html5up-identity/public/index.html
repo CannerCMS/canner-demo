@@ -24,7 +24,7 @@
 				<!-- Main -->
 					<section id="main">
 						<header>
-							<span class="avatar"><img src="images/avatar.png" alt="" /></span>
+							<span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
 							<h1>Jane Doe</h1>
 							<p>Senior Psychonautics Engineer</p>
 						</header>
@@ -66,6 +66,7 @@
 			<script>
 				if ('addEventListener' in window) {
 					var db = firebase.firestore();
+					$('#footer').hide();
 
 					var mainRef = db.collection('object').doc('main');
 					mainRef.get().then(function(doc) {
@@ -79,13 +80,17 @@
 							$('#twitter').attr('href', data.twitter);
 							$('#instagram').attr('href', data.instagram);
 							$('#facebook').attr('href', data.facebook);
+							$('#footer').show();
+							$('body').css({
+								'background-image': 'url("images/overlay.png"), linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("' + data.bg + '")'
+							});
 
 							$(document).ready(function() { 
 								document.body.className = document.body.className.replace(/\bis-loading\b/, '');
 							});
 							document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 						}
-					}).catch(function(error) {
+					}).catch(function(error)   {
 						console.log("Error getting document:", error);
 					})
 				}
