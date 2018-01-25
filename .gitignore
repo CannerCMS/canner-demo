@@ -3,3 +3,4 @@ node_modules
 .canner*
 cert
 .firebase*
+firebase-debug.log
