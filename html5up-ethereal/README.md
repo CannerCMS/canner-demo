@@ -1,6 +1,8 @@
 # HTML5Up-ethereal canner demo
 
-> This project use Firebase realtime database, learn more: https://docs.canner.io/zh/get-started/create-blog
+> This project use Firebase realtime database, learn more: https://docs.canner.io/en/get-started/create-blog
+
+and enable `Anonymous` login in `Authentication -> Sign-in method`.
 
 ## Steps
 
