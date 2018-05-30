@@ -33,7 +33,9 @@ npm i -g @canner/cli
 
 #### 6. Download firebase private key
 
-go to "settings > service account" download private key, and put it in `cert` folder.
+go to "settings > service account" download private key, and put it in `cert/firebase` folder.
+
+> Learn more http://docs.canner.io/docs/start-quick-firebase.html
 
 #### 7. Deploy your website on [Firebase hosting](https://firebase.google.com/docs/hosting/)
 
@@ -54,7 +56,7 @@ Deploy host
 Deploy schema
 
 ```
-  canner schema:deploy
+  canner script:deploy
 ```
 
 Import data

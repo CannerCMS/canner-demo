@@ -1,5 +1,9 @@
 {
   "devDependencies": {
     "@canner/canner-tools": "^0.3.10"
+  },
+  "dependencies": {
+    "canner-graphql-interface": "^1.7.0",
+    "canner-script": "^1.0.35"
   }
 }
