@@ -15,9 +15,3 @@ Live Demo: https://flamelin-f64b2.firebaseapp.com
 ### HTML5UP-lens
 
 Live Demo: https://html5up-lens.firebaseapp.com/
-
-## Firestore Themes
-
-### HTML5UP-identity
-
-Live Demo: https://business-card-39b76.firebaseapp.com/

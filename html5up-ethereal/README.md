@@ -1,6 +1,6 @@
 # HTML5Up-ethereal canner demo
 
-> This project use Firebase realtime database, learn more: https://docs.canner.io/en/get-started/create-blog
+> This project use Firebase realtime database, learn more: https://docs.canner.io/docs/start-quick-firebase.html
 
 and enable `Anonymous` login in `Authentication -> Sign-in method`.
 
@@ -15,7 +15,10 @@ npm i -g @canner/cli
 ```
 
 #### 4. Create project at Canner
-#### 5. Update `public/index.html` & `canner.schema.js` Firebase config.
+#### 5. Update `public/index.html` & `canner.connector.js` Firebase config.
+
+
+**index.html**
 
 ```js
   var config = {
@@ -28,9 +31,17 @@ npm i -g @canner/cli
   };
 ```
 
+and **canner.schema.js**
+
+```js
+const myDefultConnector = new FirebaseRtdbAdminConnector({
+  projectId: "<Project ID>"
+});
+```
+
 #### 6. Download firebase private key
 
-go to "settings > service account" download private key, and put it in `cert` folder.
+go to "settings > service account" download private key, and put it in `cert/firebase` folder.
 
 #### 7. Deploy your website on [Firebase hosting](https://firebase.google.com/docs/hosting/)
 

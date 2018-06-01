@@ -2,7 +2,7 @@
 
 canner demo using HTML5Up-dimension theme
 
-> This project use Firebase realtime database, learn more: https://docs.canner.io/en/get-started/create-blog
+> This project use Firebase realtime database, learn more: https://docs.canner.io/docs/start-quick-firebase.html
 
 ## Steps
 
@@ -18,7 +18,10 @@ npm i -g @canner/cli
 ```
 
 #### 4. Create project at Canner
-#### 5. Update `public/index.html` & `canner.schema.js` Firebase config.
+#### 5. Update `public/index.html` & `canner.connector.js` Firebase config.
+
+
+**index.html**
 
 ```js
   var config = {
@@ -29,6 +32,14 @@ npm i -g @canner/cli
     storageBucket: "STORAGE_BUCKET",
     messagingSenderId: "MESSAGING_SENDER_ID"
   };
+```
+
+and **canner.schema.js**
+
+```js
+const myDefultConnector = new FirebaseRtdbAdminConnector({
+  projectId: "<Project ID>"
+});
 ```
 
 #### 6. Download firebase private key
