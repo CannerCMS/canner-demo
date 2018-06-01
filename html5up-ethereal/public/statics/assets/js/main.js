@@ -91,6 +91,18 @@
 		 * connect to Canner database
 		 */
 
+		function parseEditor(value) {
+			return typeof value === 'object' ?
+				value.html :
+				value;
+		}
+
+		function parseImage(value) {
+			return typeof value === 'object' ?
+				value.url :
+				value;
+		}
+
 		var db = firebase.database();
 
 		firebase.auth().signInAnonymously()
@@ -101,8 +113,8 @@
 				var data = snapshot.val();
 				// main
 				$('#main h1').html(data.title);
-				$('#main p').html(data.description);
-				$('#main img').attr('src', data.image);
+				$('#main p').html(parseEditor(data.description));
+				$('#main img').attr('src', parseImage(data.image));
 
 				return db.ref('first').once('value');
 			})
@@ -110,8 +122,8 @@
 				var data = snapshot.val();
 				// first
 				$('#first h2').html(data.title);
-				$('#first p').html(data.description);
-				$('#first img').attr('src', data.image);
+				$('#first p').html(parseEditor(data.description));
+				$('#first img').attr('src', parseImage(data.image));
 
 				return db.ref('second').once('value');
 			})
@@ -119,7 +131,7 @@
 				var data = snapshot.val();
 				// second
 				$('#second h2').html(data.title);
-				$('#second p').html(data.description);
+				$('#second p').html(parseEditor(data.description));
 
 				data.icons.forEach((item) => {
 					$('#second ul')
@@ -132,8 +144,8 @@
 				var data = snapshot.val();
 				// third
 				$('#third h2').html(data.title);
-				$('#third p').html(data.description);
-				$('#third img').attr('src', data.image);
+				$('#third p').html(parseEditor(data.description));
+				$('#third img').attr('src', parseImage(data.image));
 
 				return db.ref('contact').once('value');
 			})
@@ -141,7 +153,7 @@
 				var data = snapshot.val();
 				// contact
 				$('#contact h2').html(data.title);
-				$('#contact p').html(data.description);
+				$('#contact p').html(parseEditor(data.description));
 				$('#copy').html(data.copy);
 				
 				// social

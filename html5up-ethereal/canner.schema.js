@@ -4,7 +4,7 @@ import c from 'canner-script';
 
 const section = props => <object keyName={props.sectionName} title={props.sectionTitle}>
   <string keyName="title" title={`${props.sectionTitle} Title`}/>
-  <object keyName="context" ui="editor" title={`${props.sectionTitle} Context`}/>
+  <object keyName="description" ui="editor" title={`${props.sectionTitle} Context`}/>
   <image keyName="image" title={`${props.sectionTitle} Image`}/>
 </object>
 
@@ -33,9 +33,6 @@ const socials = [{
 }, {
   socialName: 'twitter',
   socialTitle: 'Twitter'
-}, {
-  socialName: 'instagram',
-  socialTitle: 'Instagram'
 }, {
   socialName: 'medium',
   socialTitle: 'Medium'

@@ -1,7 +1,7 @@
 import {FirebaseRtdbAdminConnector} from 'canner-graphql-interface';
 
 const myDefultConnector = new FirebaseRtdbAdminConnector({
-  projectId: "html5up-lens"
+  projectId: "<Project ID>"
 });
 
 export default myDefultConnector;

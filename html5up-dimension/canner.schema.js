@@ -7,6 +7,7 @@ export default (
       <string keyName="icon" title="Website icon" />
       <string keyName="title" title="Website title" />
       <object keyName="description" title="Description" ui="editor" />
+      <image keyName="background" title="Background" />
       <string keyName="copy" title="Copyright" />
     </object>
     <object keyName="intro" title="Introduction page">
@@ -29,14 +30,14 @@ export default (
       <object keyName="facebook">
         <string keyName="link" title="Your Facebook link" ui="link" />
       </object>
+      <object keyName="github">
+        <string keyName="link" title="Your Github link" ui="link" />
+      </object>
       <object keyName="twitter">
         <string keyName="link" title="Your Twitter link" ui="link" />
       </object>
       <object keyName="instagram">
         <string keyName="link" title="Your Instagram link" ui="link" />
-      </object>
-      <object keyName="github">
-        <string keyName="link" title="Your Github link" ui="link" />
       </object>
     </object>
   </root>

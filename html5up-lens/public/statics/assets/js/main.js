@@ -503,9 +503,11 @@ var main = (function($) { var _ = {
       })
       .then(function(snapshot) {
         var data = snapshot.val();
-
+        var description = typeof data.description === 'object' ?
+          description.html :
+          description;
         $('#header h1').html(data.title);
-        $('#header p').html(data.description);
+        $('#header p').html(description);
         $('#header #twitter').attr('href', data.twitter);
         $('#header #instagram').attr('href', data.instagram);
         $('#header #github').attr('href', data.github);
@@ -518,8 +520,14 @@ var main = (function($) { var _ = {
         Object.keys(snapshot.val())
           .map(key => snapshot.val()[key])
           .forEach(function(photo, i) {
+            var image = typeof photo.image === 'string' ?
+              photo.image :
+              photo.image.url;
+            var thumb = typeof photo.thumb === 'string' ?
+              photo.thumb :
+              photo.thumb.url;
             var picSection = '<article>';
-            picSection += '<a class="thumbnail" href="' + photo.image + '" data-position="top center"><img src="' + photo.thumb + '" alt="" /></a>';
+            picSection += '<a class="thumbnail" href="' + image + '" data-position="top center"><img src="' + thumb + '" alt="" /></a>';
             picSection += '<h2>' + photo.imgTitle + '</h2>';
             picSection += '<p>' + photo.imgDescription + '</p>';
             picSection += '</article>';

@@ -32,21 +32,35 @@
 
   var db = firebase.database();
 
+  function parseEditor(value) {
+    return typeof value === 'object' ?
+      value.html :
+      value;
+  
+  }
+
+  function parseImage(value) {
+    return typeof value === 'object' ?
+      value.url :
+      value;
+  }
+
   firebase.auth().signInAnonymously()
     .then(function () {
       return db.ref('header').once('value');
     })
     .then(function (snapshot) {
       var data = snapshot.val();
+
       // header
       $('#header .logo').html('<span class="icon fa-' + data.icon + '"></span>');
       $('#header h1').html(data.title);
-      $('#header .inner p').html(data.description);
+      $('#header .inner p').html(parseEditor(data.description));
       $('#copy').html(data.copy);
 
-      if (data.background) {
+      if (parseImage(data.background)) {
         // append new style in head
-        $('head').append('<style>#bg::after {background-image: url("' + data.background + '")}</style>');
+        $('head').append('<style>#bg::after {background-image: url("' + parseImage(data.background) + '")}</style>');
       }
 
       return db.ref('intro').once('value');
@@ -56,8 +70,8 @@
       // intro
       $('#list-intro').html(data.title);
       $('#intro h2').html(data.title);
-      $('#intro img').attr('src', data.image);
-      $('#intro p').html(data.content);
+      $('#intro img').attr('src', parseImage(data.image));
+      $('#intro p').html(parseEditor(data.content));
 
       return db.ref('work').once('value');
     })
@@ -66,8 +80,8 @@
       // work
       $('#list-work').html(data.title);
       $('#work h2').html(data.title);
-      $('#work img').attr('src', data.image);
-      $('#work p').html(data.content);
+      $('#work img').attr('src', parseImage(data.image));
+      $('#work p').html(parseEditor(data.content));
 
       return db.ref('about').once('value');
     })
@@ -76,8 +90,8 @@
       // about
       $('#list-about').html(data.title);
       $('#about h2').html(data.title);
-      $('#about img').attr('src', data.image);
-      $('#about p').html(data.content);
+      $('#about img').attr('src', parseImage(data.image));
+      $('#about p').html(parseEditor(data.content));
 
       return db.ref('contact').once('value');
     })
