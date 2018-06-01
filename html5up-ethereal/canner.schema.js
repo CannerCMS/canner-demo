@@ -9,7 +9,7 @@ const section = props => <object keyName={props.sectionName} title={props.sectio
 </object>
 
 const social = props => <object keyName={props.socialName} title={props.socialTitle}>
-  <string keyName="id" title={`${props.socialName} Id`}/>
+  <string keyName="id" title={`${props.socialTitle} Id`}/>
   <string keyName="link" ui="link" title={`${props.socialTitle} Address`} />
 </object>
 
@@ -44,10 +44,10 @@ const socials = [{
 export default (
   <root>
     {sections.map(section)}
-    <object keyName="content">
-      <string keyName="title" />
-      <string keyName="description" />
+    <object keyName="contact" title="Contact us">
+      <string keyName="title" title="Contact us title"/>
+      <object keyName="description" ui="editor" title="Contact us description"/>
       {socials.map(social)}
-    <object>
+    </object>
   </root>
 )

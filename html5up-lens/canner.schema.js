@@ -12,7 +12,7 @@ export default (
       <string keyName="email" ui="link" title="Email" description="Enter your Email here"/>
       <string keyName="copy" title="Copyright" description="What is your copyright?"/>
     </object>
-    <array keyName="gallery" title="Gallery" ui="tabs">
+    <array keyName="photos" title="Gallery" ui="panel">
       <string keyName="imgTitle" title="Image title"/>
       <string keyName="imgDescription" title="Image description"/>
       <image keyName="image" title="Main image"/>
