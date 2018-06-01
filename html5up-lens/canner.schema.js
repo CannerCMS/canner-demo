@@ -1,39 +1,22 @@
-CannerTypes.endpoint('firebase', {
-  apiKey: "API_KEY",
-  authDomain: "AUTH_DOMAIN",
-  databaseURL: "DATABASE_URL",
-  projectId: "PROJECT_ID",
-  storageBucket: "STORAGE_BUCKET",
-  messagingSenderId: "MESSAGING_SENDER_ID"
-})
+/** @jsx c */
+import c from 'canner-script';
 
-const title = CannerTypes.string().title('Website title').description('Please enter a title of your website');
-const description = CannerTypes.string().title('Description').description('Enter description of your website').ui('editor');
-const twitter = CannerTypes.string().title('Twitter').description('Twitter account').ui('link');
-const github = CannerTypes.string().title('Github').description('Github account').ui('link');
-const instagram = CannerTypes.string().title('Instagram').description('Instagram account').ui('link');
-const email = CannerTypes.string().title('Email').description('Enter your Email here').ui('link');
-const copy = CannerTypes.string().title('Copyright').description('What is your copyright?');
-const main = CannerTypes.object({
-  title,
-  description,
-  twitter,
-  github,
-  instagram,
-  email,
-  copy
-}).description('Main page');
-
-// images
-const image = CannerTypes.string().title('Main image').description('Original image in your gallery').ui('image');
-const thumb = CannerTypes.string().description('Thumb image').description('Thumb image in your gallery').ui('image');
-const imgTitle = CannerTypes.string().description('Image title');
-const imgDescription = CannerTypes.string().description('Image description');
-const photos = CannerTypes.array({
-  image,
-  thumb,
-  imgTitle,
-  imgDescription
-}).description('Gallery');
-
-module.exports = {main, photos};
+export default (
+  <root>
+    <object keyName="main" title="Main page">
+      <string keyName="title" title="Website Title" description="Please enter a title of your website"/>
+      <object keyName="description" ui="editor"  title="Description" description="Enter description of your website" />
+      <string keyName="twitter" ui="link" title="Twitter" description="Twitter account"/>
+      <string keyName="github" ui="link" title="Github" description="Github account"/>
+      <string keyName="instagram" ui="link"  title="Instagram" description="Instagram account"/>
+      <string keyName="email" ui="link" title="Email" description="Enter your Email here"/>
+      <string keyName="copy" title="Copyright" description="What is your copyright?"/>
+    </object>
+    <array keyName="gallery" title="Gallery" ui="tabs">
+      <string keyName="imgTitle" title="Image title"/>
+      <string keyName="imgDescription" title="Image description"/>
+      <image keyName="image" title="Main image"/>
+      <image keyName="thumb" title="Thumb image"/>
+    </array>
+  </root>
+)
