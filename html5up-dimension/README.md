@@ -18,7 +18,7 @@ npm i -g @canner/cli
 ```
 
 #### 4. Create project at Canner
-#### 5. Update `public/index.html` & `canner.connector.js` Firebase config.
+#### 5. Update `public/index.html` & `canner.schema.js` Firebase config.
 
 
 **index.html**
@@ -34,7 +34,7 @@ npm i -g @canner/cli
   };
 ```
 
-and **canner.schema.js**
+and **canner.schema.js - utils.js**
 
 ```js
 const myDefultConnector = new FirebaseRtdbAdminConnector({
@@ -67,7 +67,7 @@ Deploy host
 Deploy schema
 
 ```
-  canner script:deploy
+  canner schema:deploy
 ```
 
 Import data

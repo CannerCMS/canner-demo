@@ -33,7 +33,7 @@ npm i -g @canner/cli
   };
 ```
 
-and **canner.schema.js**
+and **canner.schema.js - utils.js**
 
 ```js
 const myDefultConnector = new FirebaseRtdbAdminConnector({
@@ -64,7 +64,7 @@ Deploy host
 Deploy schema
 
 ```
-  canner schema:deploy
+  canner script:deploy
 ```
 
 Import data
