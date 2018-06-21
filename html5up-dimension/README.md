@@ -67,7 +67,7 @@ Deploy host
 Deploy schema
 
 ```
-  canner schema:deploy
+  canner script:deploy
 ```
 
 Import data
