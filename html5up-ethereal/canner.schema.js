@@ -1,8 +1,9 @@
 
 /** @jsx c */
 import c from 'canner-script';
+import {storage, connector} from './utils';
 
-const section = props => <object keyName={props.sectionName} title={props.sectionTitle}>
+const section = props => <object keyName={props.sectionName} title={props.sectionTitle} storage={storage}>
   <string keyName="title" title={`${props.sectionTitle} Title`}/>
   <object keyName="description" ui="editor" title={`${props.sectionTitle} Context`}/>
   <image keyName="image" title={`${props.sectionTitle} Image`}/>
@@ -39,9 +40,9 @@ const socials = [{
 }]
 
 export default (
-  <root>
+  <root connector={connector}>
     {sections.map(section)}
-    <object keyName="contact" title="Contact us">
+    <object keyName="contact" title="Contact us" storage={storage}>
       <string keyName="title" title="Contact us title"/>
       <object keyName="description" ui="editor" title="Contact us description"/>
       {socials.map(social)}
