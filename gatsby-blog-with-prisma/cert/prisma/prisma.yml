@@ -1,0 +1,2 @@
+endpoint: https://us1.prisma.sh/howard/gatsby-blog-with-prisma/dev
+datamodel: datamodel.graphql

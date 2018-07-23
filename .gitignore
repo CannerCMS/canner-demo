@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
 .canner*
-cert
+cert/firebase/*.json
 .firebase*
 firebase-debug.log
+cert/prisma/*.yml
