@@ -1,17 +1,5 @@
-# html5up demo on Canner
+# Canner demo
 
-deploy html5up themes on Canner
+Collection of demos to demonstrate how Canner can accomplish in different use cases.
 
-## Firebase Themes
-
-### HTML5UP-ethereal
-
-Live Demo: https://case-app-8017f.firebaseapp.com/
-
-### HTML5UP-dimension
-
-Live Demo: https://flamelin-f64b2.firebaseapp.com
-
-### HTML5UP-lens
-
-Live Demo: https://html5up-lens.firebaseapp.com/
+Welcome contributers to share their own usage here 🙌

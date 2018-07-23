@@ -6,6 +6,9 @@ canner demo using HTML5Up-LENS theme
 
 and enable `Anonymous` login in `Authentication -> Sign-in method`.
 
+## Live Demo: https://html5up-lens.firebaseapp.com/
+
+
 ## Steps
 
 #### 1. Create a new project at Firebase

@@ -4,6 +4,8 @@
 
 and enable `Anonymous` login in `Authentication -> Sign-in method`.
 
+## Live Demo: https://case-app-8017f.firebaseapp.com/
+
 ## Steps
 
 #### 1. Create a new project at Firebase

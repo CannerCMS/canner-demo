@@ -4,6 +4,8 @@ canner demo using HTML5Up-dimension theme
 
 > This project use Firebase realtime database, learn more: https://docs.canner.io/docs/start-quick-firebase.html
 
+## Live Demo: https://flamelin-f64b2.firebaseapp.com
+
 ## Steps
 
 #### 1. Create a new project at Firebase
