@@ -25,7 +25,7 @@ export default (
       >
       <string title="Post name" keyName="name"/>
       <dateTime title="Post date" keyName="postDate"/>
-      <string title="Content" keyName="content" packageName="./customize-cms-component/customize-string-md_editor"/>
+      <object title="Content" keyName="content" ui="editor"/>
     </array>
   </root>
 )

@@ -2,5 +2,10 @@ type Post {
   id: ID! @unique
   name: String!
   postDate: DateTime!
-  content: String
+  content: SlateEditor
+}
+
+type SlateEditor {
+  slate: String!
+  html: String!
 }
