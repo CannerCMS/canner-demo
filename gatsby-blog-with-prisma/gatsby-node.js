@@ -37,18 +37,29 @@ exports.createPages = ({ graphql, actions }) => {
         _.each(posts, (post, index) => {
           const previous = index === posts.length - 1 ? null : posts[index + 1];
           const next = index === 0 ? null : posts[index - 1];
-
           createPage({
-            path: `/${slug(post.name)}/`,
+            path: `/posts/${slug(post.name)}/`,
             component: blogPost,
             context: {
               slug: slug(post.name),
-              previous,
-              next,
+              previous: previous && {...previous, slug: slug(previous.name)},
+              next: next && {...next, slug: slug(next.name)},
             },
           })
         })
       })
     )
   })
+}
+
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === 'PrismaGraphQL') {
+    // add slug to per post
+    node.posts.map(post => {
+      post.slug = slug(post.name);
+    });
+  }
+
 }

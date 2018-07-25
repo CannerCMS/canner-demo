@@ -1,21 +1,22 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
+import {Link, graphql} from 'gatsby'
 import get from 'lodash/get'
 
 import Bio from '../components/Bio'
+import Layout from '../components/layout'
 import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
   render() {
-    // const post = this.props.data.markdownRemark
-    // const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-    // const { previous, next } = this.props.pathContext
-
+    const {data, pageContext} = this.props;
+    const post = data.prismaGraphQl.posts.find(post => post.slug === pageContext.slug);
+    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+    const { previous, next } = this.props.pageContext
     return (
-      <div>
-        {/* <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
-        <h1>{post.frontmatter.title}</h1>
+      <Layout location={this.props.location}>
+        <Helmet title={`${post.name} | ${siteTitle}`} />
+        <h1>{post.title}</h1>
         <p
           style={{
             ...scale(-1 / 5),
@@ -24,9 +25,9 @@ class BlogPostTemplate extends React.Component {
             marginTop: rhythm(-1),
           }}
         >
-          {post.frontmatter.date}
+          {post.postDate}
         </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div dangerouslySetInnerHTML={{ __html: post.content && post.content.html }} />
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -46,21 +47,21 @@ class BlogPostTemplate extends React.Component {
           <li>
             {
               previous &&
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+              <Link to={previous.slug} rel="prev">
+                ← {previous.name}
               </Link>
             }
           </li>
           <li>
             {
               next &&
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+              <Link to={next.slug} rel="next">
+                {next.name} →
               </Link>
             }
           </li>
-        </ul> */}
-      </div>
+        </ul>
+      </Layout>
     )
   }
 }
@@ -73,6 +74,18 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+      }
+    }
+
+    prismaGraphQl {
+      posts {
+        id
+        name
+        postDate
+        slug
+        content {
+          html
+        }
       }
     }
   }

@@ -1,24 +1,23 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import {Link, graphql} from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import slug from 'slug'
+import excerptHtml from 'excerpt-html'
 
-import { graphql } from 'gatsby'
 import Bio from '../components/Bio'
+import Layout from '../components/layout'
 import { rhythm } from '../utils/typography'
 
 class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.prismaGraphQl.posts')
-    
     return (
-      <div>
+      <Layout location={this.props.location}>
         <Helmet title={siteTitle} />
         <Bio />
         {posts.map((node) => {
-          const postSlug = slug(node.name)
+          const postSlug = node.slug
           const title = node.name || postSlug;
           return (
             <div key={node.id}>
@@ -27,16 +26,16 @@ class BlogIndex extends React.Component {
                   marginBottom: rhythm(1 / 4),
                 }}
               >
-                <Link style={{ boxShadow: 'none' }} to={postSlug}>
+                <Link style={{ boxShadow: 'none' }} to={`/posts/${postSlug}`}>
                   {title}
                 </Link>
               </h3>
               <small>{node.postDate}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.content && node.content.html }} />
+              <p dangerouslySetInnerHTML={{ __html: node.content && excerptHtml(node.content.html) }} />
             </div>
           )
         })}
-      </div>
+      </Layout>
     )
   }
 }
@@ -50,6 +49,7 @@ export const pageQuery = graphql`
         id
         name
         postDate
+        slug
         content {
           html
         }

@@ -9,6 +9,7 @@
   "dependencies": {
     "@canner/cli": "^2.3.3",
     "canner-script": "^1.2.2",
+    "excerpt-html": "^1.2.0",
     "gatsby": "2.0.0-beta.57",
     "gatsby-plugin-feed": "next",
     "gatsby-plugin-google-analytics": "next",
