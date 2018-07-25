@@ -2,13 +2,13 @@
 
 Demo of how to use gatsby + prisma + canner.
 
-1. Initial your Prisma project
+## 1. Initial your Prisma project
 
 Follow Prisma quick start to start your first project: https://www.prisma.io/docs/quickstart/
 
 After these steps your get two files (`datamodel.graphql` and `prisma.yml`) that is needed in next step.
 
-2. Copy Prisma files
+## 2. Copy Prisma files
 
 Canner needs prisma's `datamodel.graphql` and `prisma.yml` to create a proxy server that deliver requests to your prisma server.
 
@@ -20,14 +20,14 @@ $ cp path/to/prisma-project/prisma.yml ./cert/prisma
 $ cp path/to/prisma-project/datamodel.graphql ./cert/prisma
 ```
 
-3. Deploy your prisma settings
+## 3. Deploy your prisma settings
 
 ```
 $ cd ./cert/prisma
 $ prisma deploy
 ```
 
-4. Serve your Canner CMS & website locally
+## 4. Serve your Canner CMS & website locally
 
 Install Canner globally:
 
@@ -48,7 +48,7 @@ npm run dev
 ```
 
 
-5. Deploy to Canner
+## 5. Deploy to Canner
 
 Login Canner & create new app:
 
@@ -63,6 +63,6 @@ Deploy your CMS
 $ canner script:deploy
 ```
 
-6. Deploy website
+## 6. Deploy website
 
 https://www.gatsbyjs.org/docs/deploy-gatsby/
