@@ -4,8 +4,8 @@ const path = require('path')
 const slug = require('slug')
 const { createFilePath } = require('gatsby-source-filesystem')
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
 
   return new Promise((resolve, reject) => {
     const blogPost = path.resolve('./src/templates/blog-post.js')
