@@ -15,17 +15,11 @@
     "gatsby-plugin-google-analytics": "^1.0.29",
     "gatsby-plugin-offline": "^1.0.15",
     "gatsby-plugin-react-helmet": "^1.0.8",
-    "gatsby-plugin-sharp": "^1.6.42",
     "gatsby-plugin-typography": "^1.7.18",
-    "gatsby-remark-copy-linked-files": "^1.5.31",
-    "gatsby-remark-images": "^1.5.61",
-    "gatsby-remark-prismjs": "^1.2.24",
-    "gatsby-remark-responsive-iframe": "^1.4.18",
-    "gatsby-remark-smartypants": "^1.4.12",
     "gatsby-source-filesystem": "^1.5.31",
-    "gatsby-transformer-remark": "^1.7.40",
-    "gatsby-transformer-sharp": "^1.6.22",
+    "gatsby-source-graphql": "^1.1.1",
     "lodash": "^4.17.5",
+    "slug": "^0.9.1",
     "typeface-merriweather": "0.0.43",
     "typeface-montserrat": "0.0.43",
     "typography-theme-wordpress-2016": "^0.15.10"
@@ -33,7 +27,6 @@
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.7.0",
-    "gatsby-source-graphql": "^1.1.1",
     "gh-pages": "^1.1.0",
     "prettier": "^1.12.0"
   },
@@ -47,9 +40,15 @@
     "type": "git",
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
+  "resolutions": {
+    "graphql-skip-limit/**/graphql": "0.11.7",
+    "relay-compiler/**/graphql": "0.11.7",
+    "canner-graphql-interface/**/graphql": "0.11.7",
+    "gatsby/**/graphql": "0.11.7",
+    "graphql": "0.11.7"
+  },
   "scripts": {
     "cms": "canner script:serve",
-    "postinstall": "rm -rf ./node_modules/canner-graphql-interface/node_modules/graphql",
     "dev": "gatsby develop",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -1,0 +1,8 @@
+{
+  posts {
+    id
+    name
+    postDate
+    content
+  }
+}

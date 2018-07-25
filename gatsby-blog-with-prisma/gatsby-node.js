@@ -1,6 +1,7 @@
 const _ = require('lodash')
 const Promise = require('bluebird')
 const path = require('path')
+const slug = require('slug')
 const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
@@ -11,16 +12,14 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     resolve(
       graphql(
         `
-          {
-            allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
-              edges {
-                node {
-                  fields {
-                    slug
-                  }
-                  frontmatter {
-                    title
-                  }
+          query PrismaQuery {
+            prismaGraphQl {
+              posts {
+                id
+                name
+                postDate
+                content {
+                  html
                 }
               }
             }
@@ -33,17 +32,17 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
 
         // Create blog posts pages.
-        const posts = result.data.allMarkdownRemark.edges;
+        const posts = result.data.prismaGraphQl.posts;
 
         _.each(posts, (post, index) => {
-          const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-          const next = index === 0 ? null : posts[index - 1].node;
+          const previous = index === posts.length - 1 ? null : posts[index + 1];
+          const next = index === 0 ? null : posts[index - 1];
 
           createPage({
-            path: post.node.fields.slug,
+            path: `/${slug(post.name)}/`,
             component: blogPost,
             context: {
-              slug: post.node.fields.slug,
+              slug: slug(post.name),
               previous,
               next,
             },
@@ -52,17 +51,4 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       })
     )
   })
-}
-
-exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }
 }
