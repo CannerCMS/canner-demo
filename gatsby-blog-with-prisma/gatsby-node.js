@@ -57,7 +57,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === 'PrismaGraphQL') {
     // add slug to per post
-    node.posts.map(post => {
+    node.posts && node.posts.map(post => {
       post.slug = slug(post.name);
     });
   }
