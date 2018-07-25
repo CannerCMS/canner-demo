@@ -1,6 +1,8 @@
 # gatsby-blog + prisma + canner
 
-Demo of how to use gatsby + prisma + canner.
+Demo of how to use [canner](https://www.canner.io)(CMS) + [gatsby](https://www.gatsbyjs.org/)(Site generator) + [prisma](https://www.prisma.io/)(Database).
+
+To build your Blazing-fast website with Canner CMS, and store in Prisma graphQL.
 
 ## 1. Initial your Prisma project
 
