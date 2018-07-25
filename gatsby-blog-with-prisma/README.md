@@ -8,7 +8,6 @@ To build your Blazing-fast website with Canner CMS, and store in Prisma graphQL.
 
 Follow Prisma quick start to start your first project: https://www.prisma.io/docs/quickstart/
 
-After these steps your get two files (`datamodel.graphql` and `prisma.yml`) that is needed in next step.
 
 ## 2. Copy Prisma files
 
