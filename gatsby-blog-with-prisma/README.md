@@ -12,14 +12,13 @@ After these steps your get two files (`datamodel.graphql` and `prisma.yml`) that
 
 ## 2. Copy Prisma files
 
-Canner needs prisma's `datamodel.graphql` and `prisma.yml` to create a proxy server that deliver requests to your prisma server.
+Canner needs prisma's `prisma.yml` to create a proxy server that deliver requests to your prisma server.
 
-Copy these two files from your prisma project folder to `cert/prisma`
+Copy it from your prisma project folder to `cert/prisma`
 
 ```
 $ mkdir -p cert/prisma
 $ cp path/to/prisma-project/prisma.yml ./cert/prisma
-$ cp path/to/prisma-project/datamodel.graphql ./cert/prisma
 ```
 
 ## 3. Deploy your prisma settings
