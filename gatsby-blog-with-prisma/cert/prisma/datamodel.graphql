@@ -2,9 +2,5 @@ type Post {
   id: ID! @unique
   name: String!
   postDate: DateTime!
-  content: Editor
-}
-
-type Editor {
-  html: String!
+  content: Json
 }
