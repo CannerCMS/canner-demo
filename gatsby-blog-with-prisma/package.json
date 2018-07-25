@@ -7,7 +7,7 @@
     "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
   },
   "dependencies": {
-    "@canner/cli": "^2.3.2",
+    "@canner/cli": "^2.3.4",
     "canner-script": "^1.2.0",
     "gatsby": "^1.9.250",
     "gatsby-link": "^1.6.39",
