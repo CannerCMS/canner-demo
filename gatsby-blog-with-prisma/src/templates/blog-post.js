@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import {Link, graphql} from 'gatsby'
 import get from 'lodash/get'
+import dayjs from 'dayjs';
 
 import Bio from '../components/Bio'
 import Layout from '../components/layout'
@@ -25,7 +26,7 @@ class BlogPostTemplate extends React.Component {
             marginTop: rhythm(-1),
           }}
         >
-          {post.postDate}
+          {dayjs(post.postDate).format('YYYY / MM / DD')}
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.content && post.content.html }} />
         <hr

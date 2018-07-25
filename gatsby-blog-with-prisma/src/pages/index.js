@@ -3,6 +3,7 @@ import {Link, graphql} from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import excerptHtml from 'excerpt-html'
+import dayjs from 'dayjs';
 
 import Bio from '../components/Bio'
 import Layout from '../components/layout'
@@ -30,7 +31,7 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
-              <small>{node.postDate}</small>
+              <small>{dayjs(node.postDate).format('YYYY / MM / DD')}</small>
               <p dangerouslySetInnerHTML={{ __html: node.content && excerptHtml(node.content.html) }} />
             </div>
           )
