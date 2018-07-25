@@ -11,7 +11,7 @@
     "canner-script": "^1.2.2",
     "dayjs": "^1.7.4",
     "excerpt-html": "^1.2.0",
-    "gatsby": "2.0.0-beta.57",
+    "gatsby": "2.0.0-beta.59",
     "gatsby-plugin-feed": "next",
     "gatsby-plugin-google-analytics": "next",
     "gatsby-plugin-offline": "next",
