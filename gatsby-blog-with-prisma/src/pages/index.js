@@ -2,7 +2,7 @@ import React from 'react'
 import {Link, graphql} from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import excerptHtml from 'excerpt-html'
+import excerptHtml from '@canner/excerpt-html'
 import dayjs from 'dayjs';
 
 import Bio from '../components/Bio'
