@@ -18,7 +18,6 @@ export default class SideBarMenu extends React.Component {
   };
 
   onSelect = (selectedKeys, { selected }) => {
-    const { brand } = this.props;
     if (!selected && this.state.expandedKeys[0].indexOf("parent") !== -1)
       return this.setState({ expandedKeys: [] });
     if (selectedKeys.length > 0 && selectedKeys[0].indexOf("parent") !== -1)
@@ -32,11 +31,10 @@ export default class SideBarMenu extends React.Component {
     return (
       <MenuContainer>
         <Heading>
-          <span className="header-2">商品分類</span>
           <span className="sub-header">Category</span>
         </Heading>
         <Tree onSelect={this.onSelect} expandedKeys={expandedKeys}>
-          <TreeNode title="所有商品" key="all" />
+          <TreeNode title="All Product" key="all" />
           {categoryTree
             .map(cate => {
               if (!cate.category || cate.category.length === 0) {

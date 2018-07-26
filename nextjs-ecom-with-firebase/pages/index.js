@@ -1,11 +1,10 @@
 import * as React from "react";
 import { Row, Col, Alert } from "antd";
-import Wrapper from "../components/wrapper";
+import BgDiv from "../components/utils/BgDiv";
 import ProductList from "../components/product/productList";
 import SingleProduct from "../components/product/singleProduct";
 import Menu from "../components/product/menu";
 import MaxScreen from "../components/utils/maxScreen";
-import { fromJS } from "immutable";
 import keyToArr from "../components/utils/keyToArr";
 import styled from "styled-components";
 import { values } from "lodash";
@@ -29,64 +28,45 @@ export default class Ecommerce extends React.Component {
 
     const productSnapshot = await firebase
       .database()
-      .ref("products")
+      .ref("product")
       .once("value");
 
-    const hanataStoreSnapshot = await firebase
+    const storeSnapshot = await firebase
       .database()
-      .ref("hanataStore")
+      .ref("store")
       .once("value");
 
     const categorySnapshot = await firebase
       .database()
-      .ref("categories")
-      .once("value");
-
-    const homeSnapshot = await firebase
-      .database()
-      .ref("home")
+      .ref("category")
       .once("value");
 
     return {
-      hanataStore: hanataStoreSnapshot.val(),
+      store: storeSnapshot.val(),
       cateId: query.cateId,
       prodId: query.prodId,
       allProducts: keyToArr(productSnapshot.val()),
-      category: keyToArr(categorySnapshot.val()),
-      products: keyToArr(productSnapshot.val()).filter(
-        product => product.brand === "HANATA"
-      ),
-      home: homeSnapshot.val()
+      category: keyToArr(categorySnapshot.val())
     };
   }
 
   render() {
-    const {
-      home,
-      allProducts,
-      hanataStore,
-      products,
-      category,
-      cateId,
-      prodId
-    } = this.props;
-    const bgImages = values(hanataStore.bannerBg).map(
-      pic => pic.img && pic.img.url
-    );
+    const { store, allProducts, category, cateId, prodId } = this.props;
+    const bgImages = values(store.bannerBg).map(pic => pic.img && pic.img.url);
 
     const finalProduct =
       cateId && cateId !== "all"
-        ? products.filter(prod => prod.category === cateId)
-        : products;
+        ? allProducts.filter(prod => prod.category === cateId)
+        : allProducts;
     const currentCategory = category.find(cate => cate._id === cateId);
 
     const ProductFinalList = () => {
       return finalProduct.length > 0 ? (
-        <ProductList products={fromJS(finalProduct)} />
+        <ProductList products={finalProduct} />
       ) : (
         <Alert
-          message="尚無商品"
-          description="此類別尚無商品"
+          message="No product"
+          description="This category don't have any product"
           type="warning"
           showIcon
         />
@@ -94,9 +74,21 @@ export default class Ecommerce extends React.Component {
     };
 
     return (
-      <Wrapper home={home} page="hanataStore" bg={bgImages} brand="HANATA">
+      <React.Fragment>
+        <BgDiv
+          imageSet={bgImages}
+          slideSetting={{
+            dots: false,
+            effect: "fade",
+            speed: 2000
+          }}
+          style={{
+            height: `calc(70vh - 92px)`,
+            position: "relative"
+          }}
+        />
         <MaxScreen>
-          <div className="container">
+          <div className="container" style={{ marginTop: "30px" }}>
             <Row>
               <Col sm={5} xs={0}>
                 <Block>
@@ -107,11 +99,11 @@ export default class Ecommerce extends React.Component {
                 {!prodId ? (
                   <div>
                     <Heading>
-                      <span className="header-2">
+                      <span className="sub-header">
                         {(cateId &&
                           currentCategory &&
-                          `類別：${currentCategory.name}`) ||
-                          "所有商品"}
+                          `Selected category: ${currentCategory.name}`) ||
+                          "All category"}
                       </span>
                     </Heading>
                     <ProductFinalList />
@@ -119,10 +111,8 @@ export default class Ecommerce extends React.Component {
                 ) : (
                   <SingleProduct
                     prodId={prodId}
-                    brand={brand}
-                    allProduct={fromJS(allProducts)}
-                    selectedProduct={fromJS(
-                      products.find(prod => prod._id === prodId)
+                    selectedProduct={allProducts.find(
+                      prod => prod._id === prodId
                     )}
                   />
                 )}
@@ -130,7 +120,7 @@ export default class Ecommerce extends React.Component {
             </Row>
           </div>
         </MaxScreen>
-      </Wrapper>
+      </React.Fragment>
     );
   }
 }

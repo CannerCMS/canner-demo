@@ -1,18 +1,7 @@
-// @flow
 import * as React from "react";
 import { Carousel } from "antd";
 
-type Props = {
-  image?: string,
-  imageSet?: Array<*>,
-  style: Object,
-  children: any,
-  slideSetting?: Object
-};
-
-export default class BgDiv extends React.Component<Props> {
-  slide: ?Carousel;
-  timeInterval: any;
+export default class BgDiv extends React.Component {
   componentDidMount() {
     const { imageSet, slideSetting } = this.props;
     if (imageSet && imageSet.length > 0) {

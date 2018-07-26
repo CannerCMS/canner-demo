@@ -1,8 +1,8 @@
 export default {
-  apiKey: "AIzaSyD05HjEzvT9mpMz3qCoR4Zps-vHDff_EuQ",
-  authDomain: "hanata-8172f.firebaseapp.com",
-  databaseURL: "https://hanata-8172f.firebaseio.com",
-  projectId: "hanata-8172f",
-  storageBucket: "hanata-8172f.appspot.com",
-  messagingSenderId: "683628957472"
+  apiKey: "AIzaSyB9Jlb1QwyUkVOf2_3oa07Y6sD5A3CPTCw",
+  authDomain: "canner-ecommerce-demo.firebaseapp.com",
+  databaseURL: "https://canner-ecommerce-demo.firebaseio.com",
+  projectId: "canner-ecommerce-demo",
+  storageBucket: "canner-ecommerce-demo.appspot.com",
+  messagingSenderId: "1086084594829"
 };

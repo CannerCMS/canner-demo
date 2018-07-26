@@ -24,6 +24,14 @@ export default class MyDocument extends Document {
           <meta charSet="utf-8" />
           <link rel="stylesheet" href="/_next/static/style.css" />
           <link rel="stylesheet" href="/static/style.css" />
+          <link
+            rel="stylesheet"
+            href="https://unpkg.com/react-image-gallery@0.8.9/styles/css/image-gallery.css"
+          />
+          <link
+            href="https://unpkg.com/react-image-lightbox@5.0.0/style.css"
+            rel="stylesheet"
+          />
           {this.props.styleTags}
         </Head>
         <body>

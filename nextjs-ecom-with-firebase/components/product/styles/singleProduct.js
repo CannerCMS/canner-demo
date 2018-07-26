@@ -24,7 +24,6 @@ export const Title = styled.div`
 
 export const ShareButton = styled.div`
   display: inline-block;
-  float: right;
 `;
 
 export const AddCartBtn = styled.button`
@@ -76,30 +75,4 @@ export const Label = styled.div`
 
 export const BuyInfo = styled.div`
   margin-top: 60px;
-`;
-
-export const RecommandHeader = styled.div`
-  margin: 5rem 0 3rem;
-  text-align: center;
-`;
-
-export const AddBuyContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-`;
-
-export const AddItem = styled.div`
-  margin: 0 10px;
-  flex: 1;
-  max-width: 250px;
-  display: flex;
-  flex-direction: column;
-`;
-
-export const Name = styled.div`
-  color: ${color.darkBlue};
-  text-align: center;
-  margin: 0.8rem 0;
-  letter-spacing: 1px;
 `;
