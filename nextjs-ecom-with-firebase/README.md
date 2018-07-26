@@ -64,7 +64,3 @@ Deploy your CMS
 ```
 $ canner script:deploy
 ```
-
-## 6. Deploy website
-
-https://www.gatsbyjs.org/docs/deploy-gatsby/
