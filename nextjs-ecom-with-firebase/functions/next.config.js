@@ -10,15 +10,7 @@ if (typeof require !== "undefined") {
 
 module.exports = withCss({
   distDir: isProd ? "next" : ".next",
-  webpack(config, { dev }) {
-    // if (dev) {
-    //   config.resolve.alias["styled-components"] = path.resolve(
-    //     "../",
-    //     __dirname,
-    //     "node_modules",
-    //     "styled-components"
-    //   );
-    // }
+  webpack(config) {
     // Further custom configuration here
     return config;
   }

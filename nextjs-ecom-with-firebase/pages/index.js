@@ -23,7 +23,7 @@ const Heading = styled.div`
   }
 `;
 
-export default class HanataStore extends React.Component {
+export default class Ecommerce extends React.Component {
   static async getInitialProps({ query }) {
     const firebase = initialDatabase();
 
@@ -74,21 +74,15 @@ export default class HanataStore extends React.Component {
       pic => pic.img && pic.img.url
     );
 
-    const popularId = hanataStore.populars || [];
-    const popularProducts = products.filter(
-      prod => popularId.indexOf(prod.no) !== -1
-    );
-
     const finalProduct =
       cateId && cateId !== "all"
         ? products.filter(prod => prod.category === cateId)
         : products;
     const currentCategory = category.find(cate => cate._id === cateId);
-    const brand = "HANATA";
 
     const ProductFinalList = () => {
       return finalProduct.length > 0 ? (
-        <ProductList products={fromJS(finalProduct)} brand={brand} />
+        <ProductList products={fromJS(finalProduct)} />
       ) : (
         <Alert
           message="尚無商品"
@@ -106,10 +100,7 @@ export default class HanataStore extends React.Component {
             <Row>
               <Col sm={5} xs={0}>
                 <Block>
-                  <Menu
-                    categoryTree={category.filter(cate => cate.brand === brand)}
-                    brand={brand}
-                  />
+                  <Menu categoryTree={category} />
                 </Block>
               </Col>
               <Col sm={{ span: 17, offset: 2 }} xs={24}>

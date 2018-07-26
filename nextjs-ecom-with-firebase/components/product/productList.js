@@ -149,7 +149,7 @@ export default class ProductList extends React.Component {
   render() {
     const { count, product, modalVis } = this.state;
     const options = product && product.getIn(["variants", "options"]);
-    const { products, brand } = this.props;
+    const { products } = this.props;
     return (
       <ProductListWrapper>
         <Row gutter={24}>
@@ -157,11 +157,7 @@ export default class ProductList extends React.Component {
             return (
               <Col md={8} sm={12} xs={12} key={i}>
                 <Item>
-                  <Link
-                    href={`/${
-                      brand === "SUSS" ? "sussStore" : "hanataStore"
-                    }?prodId=${product.get("_id")}`}
-                  >
+                  <Link href={`/?prodId=${product.get("_id")}`}>
                     <a>
                       <div
                         style={{

@@ -1,0 +1,135 @@
+{
+  "597069271946893b20e1a495": {
+    "brand": "HANATA",
+    "category": "59995c74b0f81ca0eb8e772b",
+    "description": {
+      "html": "",
+      "state": ""
+    },
+    "detail": [
+      {
+        "content": {
+          "html": "",
+          "state": ""
+        },
+        "name": "leo"
+      },
+      {
+        "content": {
+          "html": "",
+          "state": ""
+        },
+        "name": "leo"
+      }
+    ],
+    "name": "青蘋果桂花釀乳酪慕斯蛋糕",
+    "no": "HA001",
+    "photos": [
+      {
+        "img": {
+          "url":
+            "https://image.canner.io/img/598452abac2e466d94f20604_B1TE8_HuW"
+        },
+        "title": ""
+      },
+      {
+        "img": {
+          "url": "https://canner-qa.s3.amazonaws.com/gallery/bnb/bnb_2_600.jpg"
+        },
+        "title": ""
+      }
+    ],
+    "price": 450,
+    "promo": 380
+  },
+  "597069271946893b20e1a496": {
+    "brand": "HANATA",
+    "category": "59995c1eb0f81ca0eb8e7728",
+    "description": {
+      "html": "",
+      "state": ""
+    },
+    "detail": [
+      {
+        "content": {
+          "html": "",
+          "state": ""
+        },
+        "name": "商品尺寸"
+      }
+    ],
+    "name": "大理石恆愛系列",
+    "no": "HA003",
+    "photos": [
+      {
+        "img": {
+          "url":
+            "https://image.canner.io/img/598452abac2e466d94f20604_r1S2HOr_W"
+        },
+        "title": ""
+      }
+    ],
+    "price": 780,
+    "promo": 0
+  },
+  "597069271946893b20e1a497": {
+    "brand": "HANATA",
+    "category": "59995c94b0f81ca0eb8e772c",
+    "description": {
+      "html": "",
+      "state": ""
+    },
+    "detail": [
+      {
+        "content": {
+          "html": "",
+          "state": ""
+        },
+        "name": "商品尺寸"
+      }
+    ],
+    "name": "大理石恆愛系列",
+    "no": "HA002",
+    "photos": [
+      {
+        "img": {
+          "url":
+            "https://image.canner.io/img/598452abac2e466d94f20604_HkpfL8OwZ"
+        },
+        "title": ""
+      }
+    ],
+    "price": 780,
+    "promo": 0
+  },
+  "597069271946893b20e1a498": {
+    "brand": "HANATA",
+    "category": "59995d32b0f81ca0eb8e7730",
+    "description": {
+      "html": "",
+      "state": ""
+    },
+    "detail": [
+      {
+        "content": {
+          "html": "",
+          "state": ""
+        },
+        "name": "商品尺寸"
+      }
+    ],
+    "name": "花藝蛋糕禮盒--別緻",
+    "no": "HA004",
+    "photos": [
+      {
+        "img": {
+          "url":
+            "https://image.canner.io/img/598452abac2e466d94f20604_B1HbdOHuZ"
+        },
+        "title": ""
+      }
+    ],
+    "price": 2500,
+    "promo": 0
+  }
+}
