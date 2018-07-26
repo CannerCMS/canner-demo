@@ -32,7 +32,7 @@
     "start": "next start",
     "firebase:serve": "NODE_ENV=development firebase serve",
     "deploy:next": "NODE_ENV=production npm run build && firebase deploy --only functions:next",
-    "predeploy": "NODE_ENV=production npm run build && cd ./functions && yarn && cd ../",
+    "predeploy": "NODE_ENV=production npm run build && cd ./functions && npm i && cd ../",
     "deploy": "NODE_ENV=production firebase deploy"
   },
   "lint-staged": {
@@ -53,13 +53,11 @@
     "firebase": "^5.0.4",
     "firebase-admin": "^5.13.0",
     "firebase-functions": "^1.1.0",
-    "immutable": "4.0.0-rc.9",
     "lodash": "^4.17.10",
     "next": "^6.1.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.0",
     "react-icons": "^2.2.7",
-    "react-lazyload": "^2.3.0",
     "styled-components": "^3.3.3"
   },
   "license": "Apache-2.0"

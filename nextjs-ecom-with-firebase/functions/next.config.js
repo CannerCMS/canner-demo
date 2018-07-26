@@ -1,5 +1,4 @@
 const withCss = require("@zeit/next-css");
-const path = require("path");
 
 const isProd = process.env.NODE_ENV === "production";
 
