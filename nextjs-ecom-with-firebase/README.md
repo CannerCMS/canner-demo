@@ -24,11 +24,10 @@ And select your project in command.
 firebase use <firebase project ID>
 ```
 
-## 3. Deploy your prisma settings
+## 3. Deploy your Firebase hosting
 
 ```
-$ cd ./cert/prisma
-$ prisma deploy
+$ npm run deploy
 ```
 
 ## 4. Serve your Canner CMS & website locally
