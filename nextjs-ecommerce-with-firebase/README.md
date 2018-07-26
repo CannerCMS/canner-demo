@@ -2,7 +2,7 @@
 
 Demo of how to use [canner](https://www.canner.io)(CMS) + [nextjs](https://www.nextjs.org/docs)(SSR site generator) + [firebase](https://www.firebase.com/)(Database).
 
-To build your NextJS apps with Canner CMS, and store and host in Firebase.
+To build your NextJS apps with Canner CMS, and store & host in Firebase.
 
 ## 1. Create a Firebase project
 
