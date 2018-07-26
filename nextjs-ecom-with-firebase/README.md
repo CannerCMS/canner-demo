@@ -1,6 +1,6 @@
-# nextjs-ecom + firebase + canner
+# nextjs-ecommerce + firebase + canner
 
-Demo of how to use [canner](https://www.canner.io)(CMS) + [nextjs](https://www.nextjs.org/docs)(Site generator) + [firebase](https://www.firebase.com/)(Database).
+Demo of how to use [canner](https://www.canner.io)(CMS) + [nextjs](https://www.nextjs.org/docs)(SSR site generator) + [firebase](https://www.firebase.com/)(Database).
 
 To build your NextJS apps with Canner CMS, and store and host in Firebase.
 
