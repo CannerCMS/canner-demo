@@ -23,11 +23,11 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
       name
       postDate
       content
-      author {
-        id
-        name
-        email
-      }
+      #author {
+      #  id
+      #  name
+      #  email
+      #}
     }
   }`;
   const {posts} = await request(ENDPOINT, query);
