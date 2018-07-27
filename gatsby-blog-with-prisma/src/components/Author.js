@@ -4,6 +4,7 @@ import 'typeface-merriweather';
 import { rhythm } from '../utils/typography';
 import PropTypes from 'prop-types';
 import avatarPlaceholder from './avatar-placeholder.png';
+import get from 'lodash/get';
 
 class Author extends React.Component {
   static propTypes = {
@@ -11,13 +12,9 @@ class Author extends React.Component {
     profilePic: PropTypes.string
   }
 
-  static defaultProps = {
-    name: '',
-    profilePic: avatarPlaceholder
-  }
-
   render() {
-    const {name, profilePic} = this.props;
+    const name = get(this.props, 'name') || 'Anonymous';
+    const profilePic = get(this.props, 'profilePic') || avatarPlaceholder;
     return (
       <div>
         <div style={{}}>
