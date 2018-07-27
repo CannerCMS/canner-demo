@@ -7,7 +7,7 @@ class Template extends React.Component {
   static propTypes = {
     title: PropTypes.string,
     location: PropTypes.any,
-    children: PropTypes.element
+    children: PropTypes.arrayOf(PropTypes.node)
   }
 
   render() {
