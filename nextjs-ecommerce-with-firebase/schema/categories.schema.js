@@ -15,10 +15,6 @@ const Categories = ({ attributes }) => (
           title: "Name",
           dataIndex: "name"
         }
-        // , {
-        //   title: 'Parent Category',
-        //   dataIndex: 'parent.name'
-        // }
       ]
     }}
   >
@@ -26,21 +22,7 @@ const Categories = ({ attributes }) => (
       <pagination />
     </toolbar>
     <string keyName="name" title="Name" />
-    <string keyName="url" title="Url" ui="link" />
-    {/* <relation keyName="parent"
-      title="Parent category"
-      relation={{
-        type: 'toOne',
-        to: 'category'
-      }}
-      uiParams={{
-        textCol: "name",
-        columns: [{
-          title: 'Title',
-          dataIndex: 'name'
-        }]
-      }}
-    /> */}
+    <string keyName="url" title="Display Name on Url" />
   </array>
 );
 
