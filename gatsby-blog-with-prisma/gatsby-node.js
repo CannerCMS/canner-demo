@@ -4,6 +4,7 @@ const { request } = require('graphql-request');
 const createNodeHelpers = require('gatsby-node-helpers').default;
 const { createNodeFactory } = createNodeHelpers({ typePrefix: 'Prisma' });
 const PrismaPostNode = createNodeFactory('Post');
+const ENDPOINT = 'https://us1.prisma.sh/william-chang/prisma/dev';
 // const gravatar = require('gravatar');
 
 exports.sourceNodes = async ({ boundActionCreators }) => {
@@ -23,7 +24,7 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
       #}
     }
   }`;
-  const {posts} = await request('https://us1.prisma.sh/william-chang/prisma/dev', query);
+  const {posts} = await request(ENDPOINT, query);
   
   // Process data into nodes.
   posts.forEach(post => {
