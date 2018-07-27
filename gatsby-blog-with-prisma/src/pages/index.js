@@ -11,12 +11,12 @@ import { rhythm } from '../utils/typography'
 
 class BlogIndex extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.prismaGraphQl.posts')
+    const {title, author, thumbUrl, twitter, description} = get(this, 'props.data.site.siteMetadata')
+    const posts = get(this, 'props.data.allPrismaPost.edges').map(edge => edge.node);
     return (
-      <Layout location={this.props.location}>
-        <Helmet title={siteTitle} />
-        <Bio />
+      <Layout title={title} location={this.props.location}>
+        <Helmet title={title} description={description} />
+        <Bio name={author} profilePic={thumbUrl} twitter={twitter} />
         {posts.map((node) => {
           const postSlug = node.slug
           const title = node.name || postSlug;
@@ -44,15 +44,27 @@ class BlogIndex extends React.Component {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query PrismaQuery {
-    prismaGraphQl {
-      posts {
-        id
-        name
-        postDate
-        slug
-        content {
-          html
+  {
+    site {
+      siteMetadata {
+        title
+        author
+        thumbUrl
+        twitter
+        description
+      }
+    }
+    
+    allPrismaPost(sort: {fields: [postDate], order: DESC}) {
+      edges {
+        node {
+          id
+          slug
+          name
+          postDate
+          content {
+            html
+          }
         }
       }
     }

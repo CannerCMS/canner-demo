@@ -1,25 +1,16 @@
+const gravatar = require('gravatar');
+
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
-    author: 'Kyle Mathews',
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
+    title: 'Canner & Gatsby Starter Blog',
+    author: 'wwwy3y3',
+    thumbUrl: gravatar.url('wwwy3y3@gmail.com'),
+    twitter: 'wwwy3y3',
+    description: 'A starter blog demonstrating what Gatsby and Canner can do.',
+    siteUrl: 'https://www.canner.io',
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/queries/`,
-        name: 'queries',
-      },
-    },
-    {
-      resolve: 'gatsby-source-graphql',
-      options: {
-        url: 'https://us1.prisma.sh/howard/gatsby-blog-with-prisma/dev',
-      },
-    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

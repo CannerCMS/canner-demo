@@ -10,12 +10,13 @@ import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
   render() {
+    const {title, author, thumbUrl, twitter, description} = get(this, 'props.data.site.siteMetadata')
     const {data, pageContext} = this.props;
-    const post = data.prismaGraphQl.posts.find(post => post.slug === pageContext.slug);
+    const post = data.prismaPost;
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const { previous, next } = this.props.pageContext
     return (
-      <Layout location={this.props.location}>
+      <Layout title={title} location={this.props.location}>
         <Helmet title={`${post.name} | ${siteTitle}`} />
         <h1>{post.title}</h1>
         <p
@@ -34,7 +35,7 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <Bio />
+        <Bio name={author} profilePic={thumbUrl} twitter={twitter} />
 
         <ul
           style={{
@@ -70,23 +71,24 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug {
+  query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
         title
         author
+        thumbUrl
+        twitter
+        description
       }
     }
 
-    prismaGraphQl {
-      posts {
-        id
-        name
-        postDate
-        slug
-        content {
-          html
-        }
+    prismaPost(slug: {eq: $slug}) {
+      id
+      name
+      slug
+      postDate
+      content {
+        html
       }
     }
   }

@@ -1,65 +1,65 @@
-const _ = require('lodash')
-const Promise = require('bluebird')
 const path = require('path')
 const slug = require('slug')
-const { createFilePath } = require('gatsby-source-filesystem')
+const { request } = require('graphql-request')
+const createNodeHelpers = require('gatsby-node-helpers').default;
+const { createNodeFactory } = createNodeHelpers({ typePrefix: `Prisma` });
+const PrismaPostNode = createNodeFactory(`Post`);
 
-exports.createPages = ({ graphql, actions }) => {
+exports.sourceNodes = async ({ boundActionCreators }) => {
+  const { createNode } = boundActionCreators;
+  // Create nodes here, generally by downloading data
+  // from a remote API.
+  const query = `{
+    posts {
+      id
+      name
+      postDate
+      content
+    }
+  }`
+  const {posts} = await request('https://us1.prisma.sh/william-chang/prisma/dev', query);
+
+  // Process data into nodes.
+  posts.forEach(post => createNode(PrismaPostNode({
+    slug: slug(post.name),
+    ...post
+  })));
+};
+
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-
-  return new Promise((resolve, reject) => {
-    const blogPost = path.resolve('./src/templates/blog-post.js')
-    resolve(
-      graphql(
-        `
-          query PrismaQuery {
-            prismaGraphQl {
-              posts {
-                id
-                name
-                postDate
-                content {
-                  html
-                }
-              }
+  const blogPost = path.resolve('./src/templates/blog-post.js')
+  const result = await graphql(`
+    query PrismaQuery {
+      allPrismaPost(sort: {fields: [postDate], order: DESC}) {
+        edges {
+          node {
+            id
+            slug
+            name
+            content {
+              html
             }
           }
-        `
-      ).then(result => {
-        if (result.errors) {
-          console.log(result.errors)
-          reject(result.errors)
         }
+      }
+    }
+  `);
 
-        // Create blog posts pages.
-        const posts = result.data.prismaGraphQl.posts;
-
-        _.each(posts, (post, index) => {
-          const previous = index === posts.length - 1 ? null : posts[index + 1];
-          const next = index === 0 ? null : posts[index - 1];
-          createPage({
-            path: `/posts/${slug(post.name)}/`,
-            component: blogPost,
-            context: {
-              slug: slug(post.name),
-              previous: previous && {...previous, slug: slug(previous.name)},
-              next: next && {...next, slug: slug(next.name)},
-            },
-          })
-        })
-      })
-    )
+  // Create blog posts pages.
+  const postEdges = result.data.allPrismaPost.edges;
+  postEdges.forEach((postEdge, index) => {
+    const post = postEdge.node;
+    const previous = index === postEdges.length - 1 ? null : postEdges[index + 1].node;
+    const next = index === 0 ? null : postEdges[index - 1].node;
+    createPage({
+      path: `/posts/${post.slug}/`,
+      component: blogPost,
+      context: {
+        slug: post.slug,
+        previous,
+        next
+      },
+    })
   })
-}
-
-
-exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions
-  if (node.internal.type === 'PrismaGraphQL') {
-    // add slug to per post
-    node.posts && node.posts.map(post => {
-      post.slug = slug(post.name);
-    });
-  }
-
 }
