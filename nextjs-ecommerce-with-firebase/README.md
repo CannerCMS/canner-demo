@@ -1,6 +1,6 @@
-# nextjs-ecommerce + firebase + canner
+# NextJS-ecommerce + Firebase + Canner
 
-Demo of how to use [canner](https://www.canner.io)(CMS) + [nextjs](https://nextjs.org/docs/#setup)(SSR site generator) + [firebase](https://www.firebase.com/)(Database).
+Demo of how to use [Canner](https://www.canner.io)(CMS) + [NextJS](https://nextjs.org/docs/#setup)(SSR site generator) + [Firebase](https://www.firebase.com/)(Database).
 
 To build your NextJS apps with Canner CMS, and store & host in Firebase.
 
@@ -8,9 +8,9 @@ To build your NextJS apps with Canner CMS, and store & host in Firebase.
 
 Visit https://firebase.google.com/ and create your new app.
 
-## 2. Setup firebase settings
+## 2. Setup Firebase settings
 
-Download the firebase private key and put in `cert/firebase` folder.
+Download the Firebase private key and put in `cert/firebase` folder.
 
 Go to Project settings > Service accounts > Generate new private key
 

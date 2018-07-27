@@ -1,6 +1,6 @@
-# gatsby-blog + prisma + canner
+# Gatsby-blog + Prisma + Canner
 
-Demo of how to use [canner](https://www.canner.io)(CMS) + [gatsby](https://www.gatsbyjs.org/)(Site generator) + [prisma](https://www.prisma.io/)(Database).
+Demo of how to use [Canner](https://www.canner.io)(CMS) + [Gatsby](https://www.gatsbyjs.org/)(Site generator) + [Prisma](https://www.prisma.io/)(Database).
 
 To build your Blazing-fast website with Canner CMS, and store in Prisma graphQL.
 
@@ -11,16 +11,16 @@ Follow Prisma quick start to start your first project: https://www.prisma.io/doc
 
 ## 2. Copy Prisma files
 
-Canner needs prisma's `prisma.yml` to create a proxy server that deliver requests to your prisma server.
+Canner needs Prisma's `prisma.yml` to create a proxy server that deliver requests to your prisma server.
 
-Copy it from your prisma project folder to `cert/prisma`
+Copy it from your Prisma project folder to `cert/prisma`
 
 ```
 $ mkdir -p cert/prisma
 $ cp path/to/prisma-project/prisma.yml ./cert/prisma
 ```
 
-## 3. Deploy your prisma settings
+## 3. Deploy your Prisma settings
 
 ```
 $ cd ./cert/prisma
