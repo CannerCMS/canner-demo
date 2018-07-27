@@ -4,7 +4,7 @@ const { request } = require('graphql-request');
 const createNodeHelpers = require('gatsby-node-helpers').default;
 const { createNodeFactory } = createNodeHelpers({ typePrefix: 'Prisma' });
 const PrismaPostNode = createNodeFactory('Post');
-const gravatar = require('gravatar');
+// const gravatar = require('gravatar');
 
 exports.sourceNodes = async ({ boundActionCreators }) => {
   const { createNode } = boundActionCreators;
@@ -16,11 +16,11 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
       name
       postDate
       content
-      author {
-        id
-        name
-        email
-      }
+      #author {
+      #  id
+      #  name
+      #  email
+      #}
     }
   }`;
   const {posts} = await request('https://us1.prisma.sh/william-chang/prisma/dev', query);
@@ -28,9 +28,9 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
   // Process data into nodes.
   posts.forEach(post => {
     // add gravatar
-    if (post.author) {
+    /*if (post.author) {
       post.author.thumb = gravatar.url(post.author.email, {d: 'retro'});
-    }
+    }*/
     return createNode(PrismaPostNode({
       slug: slug(post.name),
       ...post

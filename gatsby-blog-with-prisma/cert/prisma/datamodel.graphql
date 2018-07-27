@@ -3,11 +3,11 @@ type Post {
   name: String!
   postDate: DateTime!
   content: Json
-  author: User
+  #author: User
 }
 
-type User {
-  id: ID! @unique
-  name: String!
-  email: String!
-}
+#type User {
+#  id: ID! @unique
+#  name: String!
+#  email: String!
+#}

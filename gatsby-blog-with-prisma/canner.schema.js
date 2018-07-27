@@ -26,6 +26,7 @@ export default (
       <string title="Post name" keyName="name"/>
       <dateTime title="Post date" keyName="postDate"/>
       <object title="Content" keyName="content" ui="editor"/>
+      {/*
       <relation title="Author" keyName="author" ui="singleSelect"
         relation={{
           to: 'User',
@@ -42,8 +43,9 @@ export default (
           }]
         }}
       />
+      */}
     </array>
-
+{/*
     <array
       keyName="User"
       title="Blog authors"
@@ -63,5 +65,6 @@ export default (
       <string title="User name" keyName="name"/>
       <string title="User email" keyName="email"/>
     </array>
+*/}
   </root>
 )

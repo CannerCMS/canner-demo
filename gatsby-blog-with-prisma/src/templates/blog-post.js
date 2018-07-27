@@ -7,7 +7,7 @@ import Bio from '../components/Bio';
 import Layout from '../components/layout';
 import { rhythm, scale } from '../utils/typography';
 import PropTypes from 'prop-types';
-import Author from '../components/Author';
+// import Author from '../components/Author';
 
 class BlogPostTemplate extends React.Component {
   static propTypes = {
@@ -34,7 +34,9 @@ class BlogPostTemplate extends React.Component {
             marginTop: rhythm(-1),
           }}
         >
-          <Author name={get(post, 'author.name')} profilePic={get(post, 'author.thumb')} />
+          {
+            // <Author name={get(post, 'author.name')} profilePic={get(post, 'author.thumb')} />
+          }
           {dayjs(post.postDate).format('YYYY / MM / DD')}
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.content && post.content.html }} />
@@ -95,10 +97,10 @@ export const pageQuery = graphql`
       name
       slug
       postDate
-      author {
-        name
-        thumb
-      }
+      #author {
+      #  name
+      #  thumb
+      #}
       content {
         html
       }
