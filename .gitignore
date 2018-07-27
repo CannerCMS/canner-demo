@@ -5,3 +5,4 @@ node_modules
 .firebase*
 firebase-debug.log
 !cert/prisma
+package-lock.json

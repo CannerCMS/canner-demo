@@ -1,0 +1,10 @@
+{
+  "bannerBg": [
+    {
+      "img": {
+        "url":
+          "https://s3-ap-northeast-1.amazonaws.com/static.canner.io/customized/@canner/hanata/img/banner-bg.jpg"
+      }
+    }
+  ]
+}
