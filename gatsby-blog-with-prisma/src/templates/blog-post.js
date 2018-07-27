@@ -7,6 +7,7 @@ import Bio from '../components/Bio';
 import Layout from '../components/layout';
 import { rhythm, scale } from '../utils/typography';
 import PropTypes from 'prop-types';
+import Author from '../components/Author';
 
 class BlogPostTemplate extends React.Component {
   static propTypes = {
@@ -16,7 +17,7 @@ class BlogPostTemplate extends React.Component {
   }
 
   render() {
-    const { title, author, thumbUrl, twitter } = get(this, 'props.data.site.siteMetadata');
+    const { title, author: mainAuthor, thumbUrl, twitter } = get(this, 'props.data.site.siteMetadata');
     const { data, pageContext } = this.props;
     const post = data.prismaPost;
     const siteTitle = get(this.props, 'data.site.siteMetadata.title');
@@ -24,7 +25,7 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout title={title} location={this.props.location}>
         <Helmet title={`${post.name} | ${siteTitle}`} />
-        <h1>{post.title}</h1>
+        <h1>{post.name}</h1>
         <p
           style={{
             ...scale(-1 / 5),
@@ -33,6 +34,7 @@ class BlogPostTemplate extends React.Component {
             marginTop: rhythm(-1),
           }}
         >
+          <Author name={get(post, 'author.name')} profilePic={get(post, 'author.thumb')} />
           {dayjs(post.postDate).format('YYYY / MM / DD')}
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.content && post.content.html }} />
@@ -41,7 +43,7 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <Bio name={author} profilePic={thumbUrl} twitter={twitter} />
+        <Bio name={mainAuthor} profilePic={thumbUrl} twitter={twitter} />
 
         <ul
           style={{
@@ -93,6 +95,10 @@ export const pageQuery = graphql`
       name
       slug
       postDate
+      author {
+        name
+        thumb
+      }
       content {
         html
       }
