@@ -1,0 +1,288 @@
+{
+  "category": {
+    "59995617b0f81ca0eb8e770a": {
+      "category": "",
+      "name": "節慶推薦",
+      "url": "holidays"
+    },
+    "59995696b0f81ca0eb8e770b": {
+      "category": "59995617b0f81ca0eb8e770a",
+      "name": "七夕",
+      "url": "lunar Valentine's Day "
+    },
+    "599956ceb0f81ca0eb8e770c": {
+      "category": "",
+      "name": "夢幻婚禮",
+      "url": "wedding"
+    },
+    "599956feb0f81ca0eb8e770d": {
+      "category": "59995617b0f81ca0eb8e770a",
+      "name": "父親節",
+      "url": "father"
+    },
+    "59995726b0f81ca0eb8e770e": {
+      "category": "59995617b0f81ca0eb8e770a",
+      "name": "精選商品",
+      "url": "recommend"
+    },
+    "59995766b0f81ca0eb8e770f": {
+      "category": "59995617b0f81ca0eb8e770a",
+      "name": "創意花束",
+      "url": "chuangyihaushu"
+    },
+    "5999579ab0f81ca0eb8e7710": {
+      "category": "599956ceb0f81ca0eb8e770c",
+      "name": "婚禮蛋糕",
+      "url": "wedding cake"
+    },
+    "599957d3b0f81ca0eb8e7711": {
+      "category": "599956ceb0f81ca0eb8e770c",
+      "name": "花甜禮盒",
+      "url": "Huatianlehe"
+    },
+    "59995801b0f81ca0eb8e7712": {
+      "category": "599956ceb0f81ca0eb8e770c",
+      "name": "杯子蛋糕",
+      "url": "cup cake"
+    },
+    "5999583ab0f81ca0eb8e7713": {
+      "category": "599956ceb0f81ca0eb8e770c",
+      "name": "棒棒糖蛋糕",
+      "url": "lollipop cake"
+    },
+    "5999586fb0f81ca0eb8e7714": {
+      "category": "599956ceb0f81ca0eb8e770c",
+      "name": "甜點Bar佈置",
+      "url": "bouquet"
+    },
+    "599958acb0f81ca0eb8e7715": {
+      "category": "599956ceb0f81ca0eb8e770c",
+      "name": "婚宴佈置",
+      "url": "hunyanbuzhi"
+    },
+    "599959ffb0f81ca0eb8e771a": {
+      "category": "",
+      "name": "周歲慶生",
+      "url": "zhoushue"
+    },
+    "59995a4ab0f81ca0eb8e771b": {
+      "category": "599959ffb0f81ca0eb8e771a",
+      "name": "周歲蛋糕",
+      "url": "zhuoshue cake"
+    },
+    "59995a6db0f81ca0eb8e771c": {
+      "category": "599959ffb0f81ca0eb8e771a",
+      "name": "花甜禮盒",
+      "url": "Huatian cake"
+    },
+    "59995a8cb0f81ca0eb8e771d": {
+      "category": "599959ffb0f81ca0eb8e771a",
+      "name": "杯子蛋糕",
+      "url": "cup cake"
+    },
+    "59995aa4b0f81ca0eb8e771e": {
+      "category": "599959ffb0f81ca0eb8e771a",
+      "name": "棒棒糖蛋糕",
+      "url": "lollipop cake"
+    },
+    "59995aceb0f81ca0eb8e771f": {
+      "category": "599959ffb0f81ca0eb8e771a",
+      "name": "甜點Bar佈置",
+      "url": "bouquet"
+    },
+    "59995af1b0f81ca0eb8e7720": {
+      "category": "599959ffb0f81ca0eb8e771a",
+      "name": "創意花束",
+      "url": "chuanyihuashu"
+    },
+    "59995b18b0f81ca0eb8e7721": {
+      "category": "",
+      "name": "歡樂派對",
+      "url": "party"
+    },
+    "59995b2eb0f81ca0eb8e7722": {
+      "category": "59995b18b0f81ca0eb8e7721",
+      "name": "派對蛋糕",
+      "url": "party cake"
+    },
+    "59995b4bb0f81ca0eb8e7723": {
+      "category": "59995b18b0f81ca0eb8e7721",
+      "name": "花甜禮盒",
+      "url": "huatianlihe"
+    },
+    "59995b66b0f81ca0eb8e7724": {
+      "category": "59995b18b0f81ca0eb8e7721",
+      "name": "杯子蛋糕",
+      "url": "cup cake"
+    },
+    "59995b7bb0f81ca0eb8e7725": {
+      "category": "59995b18b0f81ca0eb8e7721",
+      "name": "棒棒糖蛋糕",
+      "url": "lollipop cake"
+    },
+    "59995b9ab0f81ca0eb8e7726": {
+      "category": "59995b18b0f81ca0eb8e7721",
+      "name": "甜點Bar佈置",
+      "url": "bouquet"
+    },
+    "59995bd5b0f81ca0eb8e7727": {
+      "category": "",
+      "name": "造型蛋糕",
+      "url": "zhaoxing"
+    },
+    "59995c1eb0f81ca0eb8e7728": {
+      "category": "59995bd5b0f81ca0eb8e7727",
+      "name": "翻糖蛋糕",
+      "url": "fantang"
+    },
+    "59995c37b0f81ca0eb8e7729": {
+      "category": "59995bd5b0f81ca0eb8e7727",
+      "name": "奶油花蛋糕",
+      "url": "cream"
+    },
+    "59995c53b0f81ca0eb8e772a": {
+      "category": "59995bd5b0f81ca0eb8e7727",
+      "name": "杯子蛋糕",
+      "url": "cup cake"
+    },
+    "59995c74b0f81ca0eb8e772b": {
+      "category": "59995bd5b0f81ca0eb8e7727",
+      "name": "慕斯蛋糕",
+      "url": "mousse"
+    },
+    "59995c94b0f81ca0eb8e772c": {
+      "category": "59995bd5b0f81ca0eb8e7727",
+      "name": "常溫蛋糕",
+      "url": "plain"
+    },
+    "59995cbab0f81ca0eb8e772d": {
+      "category": "59995bd5b0f81ca0eb8e7727",
+      "name": "芭比娃娃蛋糕",
+      "url": "barbie"
+    },
+    "59995ce2b0f81ca0eb8e772e": {
+      "category": "59995bd5b0f81ca0eb8e7727",
+      "name": "創意花束",
+      "url": "chuanyihuashu"
+    },
+    "59995d0eb0f81ca0eb8e772f": {
+      "category": "",
+      "name": "花甜禮盒",
+      "url": "huatianlihe"
+    },
+    "59995d32b0f81ca0eb8e7730": {
+      "category": "59995d0eb0f81ca0eb8e772f",
+      "name": "花藝禮盒",
+      "url": "huayilihe"
+    },
+    "59995d64b0f81ca0eb8e7731": {
+      "category": "59995d0eb0f81ca0eb8e772f",
+      "name": "常溫禮盒",
+      "url": "changwenlihe"
+    }
+  },
+  "product": {
+    "597069271946893b20e1a495": {
+      "brand": "HANATA",
+      "category": "59995c74b0f81ca0eb8e772b",
+      "description": { "html": "", "state": "" },
+      "detail": [
+        { "content": { "html": "", "state": "" }, "name": "leo" },
+        { "content": { "html": "", "state": "" }, "name": "leo" }
+      ],
+      "name": "青蘋果桂花釀乳酪慕斯蛋糕",
+      "no": "HA001",
+      "photos": [
+        {
+          "img": {
+            "url":
+              "https://image.canner.io/img/598452abac2e466d94f20604_B1TE8_HuW"
+          },
+          "title": ""
+        },
+        {
+          "img": {
+            "url":
+              "https://canner-qa.s3.amazonaws.com/gallery/bnb/bnb_2_600.jpg"
+          },
+          "title": ""
+        }
+      ],
+      "price": 450,
+      "promo": 380
+    },
+    "597069271946893b20e1a496": {
+      "brand": "HANATA",
+      "category": "59995c1eb0f81ca0eb8e7728",
+      "description": { "html": "", "state": "" },
+      "detail": [
+        { "content": { "html": "", "state": "" }, "name": "商品尺寸" }
+      ],
+      "name": "大理石恆愛系列",
+      "no": "HA003",
+      "photos": [
+        {
+          "img": {
+            "url":
+              "https://image.canner.io/img/598452abac2e466d94f20604_r1S2HOr_W"
+          },
+          "title": ""
+        }
+      ],
+      "price": 780,
+      "promo": 0
+    },
+    "597069271946893b20e1a497": {
+      "brand": "HANATA",
+      "category": "59995c94b0f81ca0eb8e772c",
+      "description": { "html": "", "state": "" },
+      "detail": [
+        { "content": { "html": "", "state": "" }, "name": "商品尺寸" }
+      ],
+      "name": "大理石恆愛系列",
+      "no": "HA002",
+      "photos": [
+        {
+          "img": {
+            "url":
+              "https://image.canner.io/img/598452abac2e466d94f20604_HkpfL8OwZ"
+          },
+          "title": ""
+        }
+      ],
+      "price": 780,
+      "promo": 0
+    },
+    "597069271946893b20e1a498": {
+      "brand": "HANATA",
+      "category": "59995d32b0f81ca0eb8e7730",
+      "description": { "html": "", "state": "" },
+      "detail": [
+        { "content": { "html": "", "state": "" }, "name": "商品尺寸" }
+      ],
+      "name": "花藝蛋糕禮盒--別緻",
+      "no": "HA004",
+      "photos": [
+        {
+          "img": {
+            "url":
+              "https://image.canner.io/img/598452abac2e466d94f20604_B1HbdOHuZ"
+          },
+          "title": ""
+        }
+      ],
+      "price": 2500,
+      "promo": 0
+    }
+  },
+  "store": {
+    "bannerBg": [
+      {
+        "img": {
+          "url":
+            "https://s3-ap-northeast-1.amazonaws.com/static.canner.io/customized/@canner/hanata/img/banner-bg.jpg"
+        }
+      }
+    ]
+  }
+}
