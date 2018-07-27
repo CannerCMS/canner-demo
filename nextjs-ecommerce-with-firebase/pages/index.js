@@ -23,7 +23,16 @@ const Heading = styled.div`
 `;
 
 export default class Ecommerce extends React.Component {
-  static async getInitialProps({ query }) {
+  /**
+   * pathname - path section of URL
+   * query - query string section of URL parsed as an object
+   * asPath - String of the actual path (including the query) shows in the browser
+   * req - HTTP request object (server only)
+   * res - HTTP response object (server only)
+   * jsonPageRes - Fetch Response object (client only)
+   * err - Error object if any error is encountered during the rendering
+   */
+  static async getInitialProps({ query, pathname }) {
     const firebase = initialDatabase();
 
     const productSnapshot = await firebase
@@ -46,12 +55,20 @@ export default class Ecommerce extends React.Component {
       cateId: query.cateId,
       prodId: query.prodId,
       allProducts: keyToArr(productSnapshot.val()),
-      category: keyToArr(categorySnapshot.val())
+      category: keyToArr(categorySnapshot.val()),
+      pathname
     };
   }
 
   render() {
-    const { store, allProducts, category, cateId, prodId } = this.props;
+    const {
+      store,
+      allProducts,
+      category,
+      cateId,
+      prodId,
+      pathname
+    } = this.props;
     const bgImages = values(store.bannerBg).map(pic => pic.img && pic.img.url);
 
     const finalProduct =
@@ -62,7 +79,7 @@ export default class Ecommerce extends React.Component {
 
     const ProductFinalList = () => {
       return finalProduct.length > 0 ? (
-        <ProductList products={finalProduct} />
+        <ProductList products={finalProduct} pathname={pathname} />
       ) : (
         <Alert
           message="No product"
