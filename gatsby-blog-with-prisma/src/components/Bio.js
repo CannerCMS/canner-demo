@@ -1,12 +1,16 @@
-import React from 'react'
-
-// Import typefaces
-import 'typeface-montserrat'
-import 'typeface-merriweather'
-
-import { rhythm } from '../utils/typography'
+import React from 'react';
+import 'typeface-montserrat';
+import 'typeface-merriweather';
+import { rhythm } from '../utils/typography';
+import PropTypes from 'prop-types';
 
 class Bio extends React.Component {
+  static propTypes = {
+    name: PropTypes.string,
+    profilePic: PropTypes.string,
+    twitter: PropTypes.string
+  }
+
   render() {
     const {name, profilePic, twitter} = this.props;
     return (
@@ -40,8 +44,8 @@ class Bio extends React.Component {
           </a>
         </p>
       </div>
-    )
+    );
   }
 }
 
-export default Bio
+export default Bio;

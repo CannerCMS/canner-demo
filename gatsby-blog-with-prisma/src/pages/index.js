@@ -1,24 +1,28 @@
-import React from 'react'
-import {Link, graphql} from 'gatsby'
-import get from 'lodash/get'
-import Helmet from 'react-helmet'
-import excerptHtml from '@canner/excerpt-html'
+import React from 'react';
+import {Link, graphql} from 'gatsby';
+import get from 'lodash/get';
+import Helmet from 'react-helmet';
+import excerptHtml from '@canner/excerpt-html';
 import dayjs from 'dayjs';
-
-import Bio from '../components/Bio'
-import Layout from '../components/layout'
-import { rhythm } from '../utils/typography'
+import PropTypes from 'prop-types';
+import Bio from '../components/Bio';
+import Layout from '../components/layout';
+import { rhythm } from '../utils/typography';
 
 class BlogIndex extends React.Component {
+  static propTypes = {
+    location: PropTypes.any
+  }
+
   render() {
-    const {title, author, thumbUrl, twitter, description} = get(this, 'props.data.site.siteMetadata')
+    const {title, author, thumbUrl, twitter, description} = get(this, 'props.data.site.siteMetadata');
     const posts = get(this, 'props.data.allPrismaPost.edges').map(edge => edge.node);
     return (
       <Layout title={title} location={this.props.location}>
         <Helmet title={title} description={description} />
         <Bio name={author} profilePic={thumbUrl} twitter={twitter} />
         {posts.map((node) => {
-          const postSlug = node.slug
+          const postSlug = node.slug;
           const title = node.name || postSlug;
           return (
             <div key={node.id}>
@@ -34,14 +38,14 @@ class BlogIndex extends React.Component {
               <small>{dayjs(node.postDate).format('YYYY / MM / DD')}</small>
               <p dangerouslySetInnerHTML={{ __html: node.content && excerptHtml(node.content.html) }} />
             </div>
-          )
+          );
         })}
       </Layout>
-    )
+    );
   }
 }
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   {
@@ -69,4 +73,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

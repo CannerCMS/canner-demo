@@ -37,10 +37,12 @@
     "typography-theme-wordpress-2016": "^0.15.10"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.6",
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.7.0",
     "gh-pages": "^1.1.0",
-    "prettier": "^1.12.0"
+    "prettier": "^1.12.0",
+    "prop-types": "^15.6.2"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [

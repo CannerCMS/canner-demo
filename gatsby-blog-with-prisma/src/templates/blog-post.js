@@ -1,20 +1,26 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import {Link, graphql} from 'gatsby'
-import get from 'lodash/get'
+import React from 'react';
+import Helmet from 'react-helmet';
+import {Link, graphql} from 'gatsby';
+import get from 'lodash/get';
 import dayjs from 'dayjs';
-
-import Bio from '../components/Bio'
-import Layout from '../components/layout'
-import { rhythm, scale } from '../utils/typography'
+import Bio from '../components/Bio';
+import Layout from '../components/layout';
+import { rhythm, scale } from '../utils/typography';
+import PropTypes from 'prop-types';
 
 class BlogPostTemplate extends React.Component {
+  static propTypes = {
+    location: PropTypes.any,
+    data: PropTypes.any,
+    pageContext: PropTypes.any
+  }
+
   render() {
-    const {title, author, thumbUrl, twitter, description} = get(this, 'props.data.site.siteMetadata')
-    const {data, pageContext} = this.props;
+    const { title, author, thumbUrl, twitter } = get(this, 'props.data.site.siteMetadata');
+    const { data, pageContext } = this.props;
     const post = data.prismaPost;
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-    const { previous, next } = this.props.pageContext
+    const siteTitle = get(this.props, 'data.site.siteMetadata.title');
+    const { previous, next } = pageContext;
     return (
       <Layout title={title} location={this.props.location}>
         <Helmet title={`${post.name} | ${siteTitle}`} />
@@ -64,11 +70,11 @@ class BlogPostTemplate extends React.Component {
           </li>
         </ul>
       </Layout>
-    )
+    );
   }
 }
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -92,4 +98,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

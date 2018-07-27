@@ -1,9 +1,9 @@
-const path = require('path')
-const slug = require('slug')
-const { request } = require('graphql-request')
+const path = require('path');
+const slug = require('slug');
+const { request } = require('graphql-request');
 const createNodeHelpers = require('gatsby-node-helpers').default;
-const { createNodeFactory } = createNodeHelpers({ typePrefix: `Prisma` });
-const PrismaPostNode = createNodeFactory(`Post`);
+const { createNodeFactory } = createNodeHelpers({ typePrefix: 'Prisma' });
+const PrismaPostNode = createNodeFactory('Post');
 
 exports.sourceNodes = async ({ boundActionCreators }) => {
   const { createNode } = boundActionCreators;
@@ -16,7 +16,7 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
       postDate
       content
     }
-  }`
+  }`;
   const {posts} = await request('https://us1.prisma.sh/william-chang/prisma/dev', query);
 
   // Process data into nodes.
@@ -27,8 +27,8 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
 };
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-  const blogPost = path.resolve('./src/templates/blog-post.js')
+  const { createPage } = actions;
+  const blogPost = path.resolve('./src/templates/blog-post.js');
   const result = await graphql(`
     query PrismaQuery {
       allPrismaPost(sort: {fields: [postDate], order: DESC}) {
@@ -60,6 +60,6 @@ exports.createPages = async ({ graphql, actions }) => {
         previous,
         next
       },
-    })
-  })
-}
+    });
+  });
+};

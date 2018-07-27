@@ -12,14 +12,14 @@ module.exports = {
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        //trackingId: 'ADD YOUR TRACKING ID HERE',
       },
     },
-    `gatsby-plugin-feed`,
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-feed',
+    'gatsby-plugin-offline',
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-typography',
       options: {
@@ -27,4 +27,4 @@ module.exports = {
       },
     },
   ],
-}
+};

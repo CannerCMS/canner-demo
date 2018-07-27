@@ -1,14 +1,19 @@
-import React from 'react'
-import { Link } from 'gatsby'
-
-import { rhythm, scale } from '../utils/typography'
+import React from 'react';
+import { rhythm, scale } from '../utils/typography';
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
 class Template extends React.Component {
+  static propTypes = {
+    title: PropTypes.string,
+    location: PropTypes.any,
+    children: PropTypes.element
+  }
+
   render() {
-    const {title} = this.props;
-    const { location, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
+    const { title, location, children } = this.props;
+    const rootPath = `${__PATH_PREFIX__}/`;
+    let header;
 
     if (location.pathname === rootPath) {
       header = (
@@ -30,7 +35,7 @@ class Template extends React.Component {
             {title}
           </Link>
         </h1>
-      )
+      );
     } else {
       header = (
         <h3
@@ -51,7 +56,7 @@ class Template extends React.Component {
             {title}
           </Link>
         </h3>
-      )
+      );
     }
     return (
       <div
@@ -65,8 +70,8 @@ class Template extends React.Component {
         {header}
         {children}
       </div>
-    )
+    );
   }
 }
 
-export default Template
+export default Template;

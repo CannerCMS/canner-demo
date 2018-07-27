@@ -1,5 +1,7 @@
 module.exports = {
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
   "env": {
+    "node": true,
     "browser": true,
     "es6": true,
   },
@@ -7,8 +9,9 @@ module.exports = {
     "react",
   ],
   "globals": {
-    "graphql": false,
+    __PATH_PREFIX__: true
   },
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2017,
     "sourceType": "module",
@@ -16,5 +19,8 @@ module.exports = {
       "experimentalObjectRestSpread": true,
       "jsx": true,
     },
+  },
+  "rules": {
+    "quotes": ["error", "single"]
   }
 }
