@@ -114,7 +114,21 @@ const Products = ({ attributes }) => (
       }}
     >
       <string keyName="name" title="Name" required />
-      <object keyName="content" ui="editor" title="Content" />
+      <object
+        keyName="content"
+        ui="editor"
+        title="Content"
+        validation={
+          {
+            //validator: (content, reject) => {
+            //  content = content.toJS();
+            //  if (!content || content.html.length === 0) {
+            //    return reject('should be required');
+            //  }
+            //}
+          }
+        }
+      />
     </array>
     <array ui="gallery" keyName="photos" title="Product Gallery" />
     {/* </Tabs> */}
