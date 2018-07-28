@@ -22,12 +22,43 @@ const Products = ({ attributes }) => (
         {
           title: "Price",
           dataIndex: "price"
+        },
+        {
+          /* {
+          title: 'Category',
+          dataIndex: 'category.name'
+        } */
         }
       ]
     }}
   >
     <toolbar>
       <pagination />
+      {/* <filter
+        fields={[{
+          label: 'Brand',
+          type: 'select',
+          options: [{
+            text: 'All',
+            condition: {
+            }
+          }, {
+            text: 'HANATA',
+            condition: {
+              brand: {
+                eq: 'HANATA'
+              }
+            }
+          }, {
+            text: 'SUSS',
+            condition: {
+              brand: {
+                eq: 'SUSS'
+              }
+            }
+          }]
+        }]}
+      /> */}
     </toolbar>
     {/* <Tabs> */}
     {/* <Default title="Basic settings" keyName="basic"> */}
