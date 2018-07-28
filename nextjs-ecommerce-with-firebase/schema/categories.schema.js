@@ -21,8 +21,8 @@ const Categories = ({ attributes }) => (
     <toolbar>
       <pagination />
     </toolbar>
-    <string keyName="name" title="Name" />
-    <string keyName="url" title="Display Name on Url" />
+    <string keyName="name" title="Name" required />
+    <string keyName="url" title="Display Name on Url" required />
   </array>
 );
 

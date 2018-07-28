@@ -22,13 +22,11 @@ const Products = ({ attributes }) => (
         {
           title: "Price",
           dataIndex: "price"
-        },
-        {
-          /* {
-          title: 'Category',
-          dataIndex: 'category.name'
-        } */
         }
+        //{
+        //  title: 'Category',
+        //  dataIndex: 'category.name'
+        //}
       ]
     }}
   >
@@ -62,7 +60,7 @@ const Products = ({ attributes }) => (
     </toolbar>
     {/* <Tabs> */}
     {/* <Default title="Basic settings" keyName="basic"> */}
-    <string keyName="no" title="NO" />
+    <string keyName="no" title="NO" required />
     <string
       keyName="brand"
       title="Brand"
@@ -79,8 +77,9 @@ const Products = ({ attributes }) => (
           }
         ]
       }}
+      required
     />
-    <string keyName="name" title="Product name" />
+    <string keyName="name" title="Product name" required />
     <relation
       keyName="category"
       title="Category"
@@ -114,7 +113,7 @@ const Products = ({ attributes }) => (
         ]
       }}
     >
-      <string keyName="name" title="Name" />
+      <string keyName="name" title="Name" required />
       <object keyName="content" ui="editor" title="Content" />
     </array>
     <array ui="gallery" keyName="photos" title="Product Gallery" />
