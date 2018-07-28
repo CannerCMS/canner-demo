@@ -33,7 +33,8 @@
     "firebase:serve": "NODE_ENV=development firebase serve",
     "deploy:next": "NODE_ENV=production npm run build && firebase deploy --only functions:next",
     "predeploy": "NODE_ENV=production npm run build && cd ./functions && npm i && cd ../",
-    "deploy": "NODE_ENV=production firebase deploy"
+    "deploy": "NODE_ENV=production firebase deploy",
+    "import:data": "node ./data/genData.js && firebase database:set / ./data/result.json"
   },
   "lint-staged": {
     "*.{js,json,css,md}": [
