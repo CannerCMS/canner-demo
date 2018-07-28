@@ -2,11 +2,12 @@
 /* eslint-disable react/prop-types */
 
 import builder, { Tabs, Default } from "canner-script";
+import { renderPrice } from "./utils";
 
 const Products = ({ attributes }) => (
   <array
     keyName="product"
-    ui="tableRoute"
+    ui="table"
     storage={attributes.storage}
     title="Product"
     uiParams={{
@@ -21,7 +22,8 @@ const Products = ({ attributes }) => (
         },
         {
           title: "Price",
-          dataIndex: "price"
+          dataIndex: "price",
+          render: renderPrice
         }
         //{
         //  title: 'Category',
@@ -80,6 +82,7 @@ const Products = ({ attributes }) => (
       required
     />
     <string keyName="name" title="Product name" required />
+    <number keyName="price" title="Price" required />
     <relation
       keyName="category"
       title="Category"
