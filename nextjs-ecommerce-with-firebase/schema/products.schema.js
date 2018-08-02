@@ -24,17 +24,17 @@ const Products = ({ attributes }) => (
           title: "Price",
           dataIndex: "price",
           render: renderPrice
+        },
+        {
+         title: 'Category',
+         dataIndex: 'category.name'
         }
-        //{
-        //  title: 'Category',
-        //  dataIndex: 'category.name'
-        //}
       ]
     }}
   >
     <toolbar>
       <pagination />
-      {/* <filter
+      <filter
         fields={[{
           label: 'Brand',
           type: 'select',
@@ -58,83 +58,82 @@ const Products = ({ attributes }) => (
             }
           }]
         }]}
-      /> */}
-    </toolbar>
-    {/* <Tabs> */}
-    {/* <Default title="Basic settings" keyName="basic"> */}
-    <string keyName="no" title="NO" required />
-    <string
-      keyName="brand"
-      title="Brand"
-      ui="select"
-      uiParams={{
-        options: [
-          {
-            text: "HANATA",
-            value: "HANATA"
-          },
-          {
-            text: "SUSS",
-            value: "SUSS"
-          }
-        ]
-      }}
-      required
-    />
-    <string keyName="name" title="Product name" required />
-    <number keyName="price" title="Price" required />
-    <relation
-      keyName="category"
-      title="Category"
-      relation={{
-        type: "toOne",
-        to: "category"
-      }}
-      uiParams={{
-        textCol: "name",
-        columns: [
-          {
-            title: "Title",
-            dataIndex: "name"
-          }
-        ]
-      }}
-    />
-    <object keyName="description" ui="editor" title="Product description" />
-
-    {/* </Default> */}
-    <array
-      keyName="detail"
-      title="Other details"
-      ui="table"
-      uiParams={{
-        columns: [
-          {
-            title: "Name",
-            dataIndex: "name"
-          }
-        ]
-      }}
-    >
-      <string keyName="name" title="Name" required />
-      <object
-        keyName="content"
-        ui="editor"
-        title="Content"
-        validation={
-          {
-            //validator: (content, reject) => {
-            //  content = content.toJS();
-            //  if (!content || content.html.length === 0) {
-            //    return reject('should be required');
-            //  }
-            //}
-          }
-        }
       />
-    </array>
-    <array ui="gallery" keyName="photos" title="Product Gallery" />
-    {/* </Tabs> */}
+    </toolbar>
+    <Tabs>
+      <Default title="Basic settings" keyName="basic">
+        <string keyName="no" title="NO" required />
+        <string
+          keyName="brand"
+          title="Brand"
+          ui="select"
+          uiParams={{
+            options: [
+              {
+                text: "HANATA",
+                value: "HANATA"
+              },
+              {
+                text: "SUSS",
+                value: "SUSS"
+              }
+            ]
+          }}
+          required
+        />
+        <string keyName="name" title="Product name" required />
+        <number keyName="price" title="Price" required />
+        <relation
+          keyName="category"
+          title="Category"
+          relation={{
+            type: "toOne",
+            to: "category"
+          }}
+          uiParams={{
+            textCol: "name",
+            columns: [
+              {
+                title: "Title",
+                dataIndex: "name"
+              }
+            ]
+          }}
+        />
+        <object keyName="description" ui="editor" title="Product description" />
+      </Default>
+      <array
+        keyName="detail"
+        title="Other details"
+        ui="table"
+        uiParams={{
+          columns: [
+            {
+              title: "Name",
+              dataIndex: "name"
+            }
+          ]
+        }}
+      >
+        <string keyName="name" title="Name" required />
+        <object
+          keyName="content"
+          ui="editor"
+          title="Content"
+          validation={
+            {
+              validator: (content, reject) => {
+               content = content.toJS();
+               if (!content || content.html.length === 0) {
+                 return reject('should be required');
+               }
+              }
+            }
+          }
+        />
+      </array>
+      <array ui="gallery" keyName="photos" title="Product Gallery" />
+    </Tabs>
   </array>
 );
 
