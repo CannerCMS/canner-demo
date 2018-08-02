@@ -35,7 +35,6 @@ export default (
           }
         }}
       />
-{/*
       <relation title="Author" keyName="author" ui="singleSelect"
         relation={{
           to: 'User',
@@ -52,9 +51,7 @@ export default (
           }]
         }}
       />
-*/}
     </array>
-{/*
     <array
       keyName="User"
       title="Blog authors"
@@ -74,6 +71,5 @@ export default (
       <string title="User name" keyName="name" required validation={{pattern: '^[a-zA-Z0-9]{4,10}$'}} />
       <string title="User email" keyName="email" required validation={{format: 'email'}} />
     </array>
-*/}
   </root>
 )

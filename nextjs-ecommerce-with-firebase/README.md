@@ -4,6 +4,8 @@ Demo of how to use [Canner](https://www.canner.io)(CMS) + [NextJS](https://nextj
 
 To build your NextJS apps with Canner CMS, and store & host in Firebase.
 
+LIVE demo: https://canner-ecommerce-demo.firebaseapp.com/
+
 ## 1. Create a Firebase project
 
 Visit https://firebase.google.com/ and create your new app.
