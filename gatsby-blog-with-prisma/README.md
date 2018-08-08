@@ -1,5 +1,5 @@
 # Gatsby-blog + Prisma + Canner
-Demo of how to use [canner](https://www.canner.io)(CMS) + [gatsby](https://www.gatsbyjs.org/)(Site generator) + [prisma](https://www.prisma.io/)(Database).
+Demo of how to use [Canner](https://www.canner.io)(CMS) + [Gatsby](https://www.gatsbyjs.org/)(Site generator) + [Prisma](https://www.prisma.io/)(Database).
 
 ![cover](https://i.imgur.com/zqPONIo.png)
 
