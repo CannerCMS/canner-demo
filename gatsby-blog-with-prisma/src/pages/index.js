@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import Bio from '../components/Bio';
 import Layout from '../components/layout';
 import { rhythm } from '../utils/typography';
-// import Author from '../components/Author';
+import Author from '../components/Author';
 
 class BlogIndex extends React.Component {
   static propTypes = {
@@ -36,9 +36,7 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
-              {
-                // <Author name={get(node, 'author.name')} profilePic={get(node, 'author.thumb')} />
-              }
+              <Author name={get(node, 'author.name')} profilePic={get(node, 'author.thumb')} />
               <small>{dayjs(node.postDate).format('YYYY / MM / DD')}</small>
               <p dangerouslySetInnerHTML={{ __html: node.content && excerptHtml(node.content.html) }} />
             </div>
@@ -70,10 +68,10 @@ export const pageQuery = graphql`
           slug
           name
           postDate
-          #author {
-          #  name
-          #  thumb
-          #}
+          author {
+            name
+            thumb
+          }
           content {
             html
           }
