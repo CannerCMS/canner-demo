@@ -1,4 +1,4 @@
-# gatsby-blog + prisma + canner
+# Gatsby-blog + Prisma + Canner
 Demo of how to use [canner](https://www.canner.io)(CMS) + [gatsby](https://www.gatsbyjs.org/)(Site generator) + [prisma](https://www.prisma.io/)(Database).
 
 ![cover](https://i.imgur.com/zqPONIo.png)
@@ -28,7 +28,6 @@ npm install -g prisma
 ## a. Create prisma files
 ```sh
 cd cert/prisma
-
 # remove the default prisma files
 rm datamodel.graphql prisma.yml
 

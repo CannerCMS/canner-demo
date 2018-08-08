@@ -23,9 +23,18 @@ export default (
       }}
       ui="tableRoute"
       >
-      <string title="Post name" keyName="name"/>
-      <dateTime title="Post date" keyName="postDate"/>
-      <object title="Content" keyName="content" ui="editor"/>
+      <string title="Post name" keyName="name" required />
+      <dateTime title="Post date" keyName="postDate" required />
+      <object title="Content" keyName="content" ui="editor"
+        validation={{
+          validator: (data, reject) => {
+            data = data.toJS();
+            if (!data.html || data.html.length === 0) {
+              return reject('require content');
+            }
+          }
+        }}
+      />
       <relation title="Author" keyName="author" ui="singleSelect"
         relation={{
           to: 'User',
@@ -60,8 +69,8 @@ export default (
       }}
       ui="tableRoute"
       >
-      <string title="User name" keyName="name"/>
-      <string title="User email" keyName="email"/>
+      <string title="User name" keyName="name" required validation={{pattern: '^[a-zA-Z0-9]{4,10}$'}} />
+      <string title="User email" keyName="email" required validation={{format: 'email'}} />
     </array>
   </root>
 )

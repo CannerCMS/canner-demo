@@ -15,7 +15,7 @@ import {
 
 export default class ProductList extends React.Component {
   render() {
-    const { products } = this.props;
+    const { products, pathname } = this.props;
     return (
       <ProductListWrapper>
         <Row gutter={24}>
@@ -23,7 +23,7 @@ export default class ProductList extends React.Component {
             return (
               <Col md={8} sm={12} xs={12} key={i}>
                 <Item>
-                  <Link href={`/?prodId=${product._id}`}>
+                  <Link href={`${pathname}?prodId=${product._id}`}>
                     <a>
                       <div
                         style={{

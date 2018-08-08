@@ -1,38 +1,18 @@
-const { home } = require("./schema/home.js");
-const { about } = require("./schema/about.js");
-const { guide } = require("./schema/guide.js");
-const {
-  coursePage,
-  courseCategory,
-  courses,
-  course
-} = require("./schema/course.js");
-const { courseOrder } = require("./schema/courseOrder.js");
-const { brand } = require("./schema/brand.js");
-const { shop } = require("./schema/shop.js");
-const { card } = require("./schema/card.js");
-const { topLine } = require("./schema/topLine.js");
-const { product, category } = require("./schema/product.js");
-const { shipment, order, orderList } = require("./schema/order.js");
-const { promoNo } = require("./schema/payment");
+/** @jsx c */
+import c from "canner-script";
+import { connector, storage } from "./schema/utils";
+import Products from "./schema/products.schema";
+import Categories from "./schema/categories.schema";
+import Store from "./schema/store.schema";
+import Shipments from './schema/shipments.schema';
+import Orders from './schema/orders.schema';
 
-module.exports = {
-  home,
-  topLine,
-  about,
-  guide,
-  order,
-  coursePage,
-  courseCategory,
-  courses,
-  course,
-  courseOrder,
-  brand,
-  shop,
-  category,
-  product,
-  shipment,
-  orderList,
-  promoNo,
-  card
-};
+export default (
+  <root connector={connector}>
+    <Store storage={storage} />
+    <Products storage={storage} />
+    <Categories storage={storage} />
+    <Shipments storage={storage}/>
+    <Orders storage={storage}/>
+  </root>
+);
