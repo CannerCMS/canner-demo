@@ -52,6 +52,7 @@ export default (
         }}
       />
     </array>
+
     <array
       keyName="User"
       title="Blog authors"
